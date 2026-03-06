@@ -1,0 +1,72 @@
+{
+    "name": "Ayan Koley",
+    "hero": {
+        "title": "Hola 👋, bienvenido a mi currículum interactivo. Soy un desarrollador de pila completa con sede en India.",
+        "action": "Conóceme más"
+    },
+    "work": {
+        "title": "PROYECTOS",
+        "project1": {
+            "title": "Resume & Portfolio",
+            "desc": "Figma, React + GSAP ~ herramientas favoritas"
+        },
+        "project2": {
+            "title": "Algunos trabajos freelance",
+            "desc": "Como desarrollador de Fontend"
+        },
+        "project3": {
+            "title": "Algunos proyectos divertidos",
+            "desc": "Que son muy útiles a veces"
+        },
+        "project4": {
+            "title": "Compañero de banco",
+            "desc": "Proyecto final de la universidad ~ Ayuda bancaria como Chatbot/Voicebot [JS + ML]"
+        },
+        "ending": "AGUJERO-DE-GUSANO"
+    },
+    "skills": {
+        "title": "Habilidades y Experiencia",
+        "desc": "",
+        "experience": [
+            {
+                "title": "Autónomo",
+                "subtitle": "(College)",
+                "skills": ["Frontend"],
+                "role": ["Comencé mi viaje como freelance con el objetivo de actualizar mis habilidades de frontend a una etiqueta de la industria. Junto con algunos amigos en la universidad, estuve asociado con Makscube, Randomboiz, estos 2 grupos como desarrolladores frontend y brindando soluciones de software."]
+            },{
+                "title": "Labkafe | Full-stack developer",
+                "subtitle": "(05/2021 - Presente)",
+                "skills": ["JavaScript","React","Vue","PHP","Python","Figma","Photoshop","MySQL","Flutter"],
+                "role": ["Diseño, prototipado y preparación de imágenes. [Figma, Adobe XD, Photoshop]",
+                "Construyendo, probando y manteniendo el front-end",
+                "Desarrollo de backend, base de datos en un equipo de 2 personas [PHP Laravel, Python, MySQL, phpmyadmin]",
+                "Tasa de rebote reducida en un 30%",
+                "Redujo los esfuerzos manuales del equipo de operaciones en un 80% al hacer un generador de cotizaciones y un generador de facturas. [Frontend]",
+                "Se mejoró la arquitectura interna de la empresa al crear un generador de cartera [Full-stack], un sistema de gestión de recursos humanos, etc. [Full-stack]",
+                "Desarrollé una aplicación de reproductor de video para Android. [Flutter]",
+                "Un proyecto divertido: creó una extensión de Chrome para facilitar la carga de facturas en el portal de GEM mientras se realiza una oferta conjunta. Ayuda a agrupar el proceso de licitación un 50% más fácil."]
+            }
+        ]
+    },
+    "cv": {
+        "title": "Curriculum Vitae",
+        "desc": "Haga clic para expandir su preferido"
+    },
+    "about": {
+        "title": "Acerca de mí",
+        "desc": "rápido | trabajador | Disciplinado, pero más allá de eso..."
+    },
+    "contact": {
+        "title": "CONTACTO",
+        "heading": "Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto",
+        "name": "Su nombre",
+        "desc": "¿Algún mensaje?",
+        "contact": "Datos de contacto",
+        "reason": {
+            "title": "¿Le puedo ayudar en algo?",
+            "option": ["Contratame", "Algunos consejos / Informar de un error", "solo una charla", "Otras"]
+        },
+        "ending": "¿No te gustan los formularios? Deja un Hola en mis redes sociales ~"
+    },
+    "footer": "Gracias por su visita, que tenga un buen día."
+}

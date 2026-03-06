@@ -1,0 +1,84 @@
+.type {
+    display: inline-block;
+
+    >span {
+        display: grid;
+        overflow: hidden;
+        height: 1.2rem;
+
+        span {
+            white-space: pre-wrap;
+            width: 0px;
+            max-width: max-content;
+            overflow: hidden;
+            height: inherit;
+            word-break: break-all;
+            animation:
+                typeWriter 4s linear infinite alternate,
+                wordChange 24s steps(3) infinite;
+
+            &::after {
+                content: '';
+                width: 2px;
+                height: 100%;
+                position: absolute;
+                bottom: 0;
+                right: 0px;
+                background-color: white;
+                animation: blink1 0.5s infinite steps(1);
+            }
+
+            &::before {
+                content: "";
+                display: inline-block;
+            }
+        }
+    }
+}
+
+@keyframes typeWriter {
+
+    70%,
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink1 {
+
+    0%,
+    100% {
+        background: transparent;
+    }
+
+    50% {
+        background: white;
+    }
+}
+
+@keyframes wordChange {
+    100% {
+        transform: translateY(-300%)
+    }
+}
+
+.lang-es {
+    .type {
+        transform: translateX(-20px);
+    }
+}
+
+.lang-eng,
+.lang-es {
+    .type {
+        span {
+            line-height: 0.9;
+        }
+    }
+}
+
+@media (width <=1024px) {
+    .type {
+        font-size: 0.85em;
+    }
+}

@@ -1,0 +1,206 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'thunder';
+    src: url('assets/fonts/Thunder-BoldLC.ttf');
+}
+@font-face {
+    font-family: 'pixel';
+    src: url('assets/fonts/Pixeboy.ttf');
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'signika';
+    src: url('assets/fonts/Signika-SemiBold.ttf');
+    font-weight: 600;
+}
+:root {
+    --theme: #091922;
+    --themeGreen: #1DBD9C;
+    --themeDark: #181818;
+    --themeOrange: #FD7246;
+    --themePurple: #9177AB;
+    /* --project1: #c5ffe4; */
+    --project1: var(--themePurple);
+    --project2: #005461;
+    --project3: #6495ED;
+    --project4: var(--themeGreen);
+    --project5: #AFDDD5;
+    --themeLight: rgba(255, 255, 255, 0.65);
+    --thunder: 'thunder', Arial, Helvetica, sans-serif;
+    --pixel: 'pixel', Arial, Helvetica, sans-serif;
+    --signika: 'signika', 'Segoe UI', 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    --navbarHeight: 64px;
+    --px: 30px;
+    --f3xl: 50px;
+    --f2xl: 30px;
+    --fxl: 25px;
+    --flg: 20px;
+    --fsm: 14px;
+    --fm: 18px;
+    --fh: 80px;
+    --wp1: 400px;
+    --hp1: 250px;
+    --wp2: 300px;
+    --hp2: 400px;
+    --heading2: 150px;
+    --sh: calc(100vh - var(--navbarHeight));
+    --about: #eaffee;
+
+    font-family: var(--signika);
+    font-size: 16px;
+    font-weight: 400;
+    /* color-scheme: light dark; */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+@layer base {
+  * {
+    box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+    :root {
+        --flg: 17px;
+    }
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbarHeight);
+}
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden !important;
+    background-color: #D1FAE5;
+    color: var(--about);
+}
+::-webkit-scrollbar {
+    background-color: var(--theme);
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--project3);
+    border-radius: 5px;
+}
+section{
+    background-color: var(--theme);
+}
+.no-cursor{
+    pointer-events: none;
+}
+.no-cursor1{
+    pointer-events: none;
+    filter: brightness(0.4);
+}
+.min-sh{
+    min-height: var(--sh);
+}
+.mainContainer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1600px;
+}
+.px-base{
+    padding-left: var(--px);
+    padding-right: var(--px);
+}
+.thunder{
+    font-family: var(--thunder);
+}
+.text-themeGreen{
+    color: var(--themeGreen);
+}
+.bg-theme{
+    background-color: var(--theme);
+}
+.bg-themeGreen{
+    background-color: var(--themeGreen);
+}
+.bg-about{
+    background-color: var(--about);
+}
+.text-theme{
+    color: var(--theme);
+}
+.pixel{
+    font-family: var(--pixel);
+}
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.center1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.skeleton{
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+    0%{
+        background-color: hsl(200, 20%, 95%);
+    }
+    100%{
+        background-color: hsl(206, 61%, 72%);
+    }
+}
+
+.h2 {
+    font-size: 100px;
+    font-weight: 900;
+    font-family: var(--thunder);
+    color: var(--theme);
+    line-height: 1;
+}
+.highlighted-orange {
+    background-color: #FD7246;
+    color: #ffe3da;
+    border: 3px solid #ff0909;
+}
+[class*="highlighted-"] {
+    display: inline-block;
+    padding: 14px 25px 4px;
+    border-radius: 100px;
+}

@@ -1,0 +1,645 @@
+{
+    "eng": {
+        "hero": {
+            "name": "Ayan Koley",
+            "title": "Hello 👋, welcome to my interactive resume. My name is Ayan, I’m a full-stack developer based in Kolkata. I specializing in building efficient, high-performance web solutions, solving interesting coding problems. I am a quick learner, quick settler and always ready to accept new challenges.",
+            "action": "Know me more",
+            "intro": [
+                "Creative Developer",
+                "Web Designer",
+                "A Problem Solver",
+                "Software Engineer"
+            ]
+        },
+        "work": {
+            "title": "PROJECTS",
+            "title2": "Some of my works",
+            "project1": {
+                "title": "Resume & Portfolio",
+                "desc": "Figma, React + GSAP ~ a cool stack"
+            },
+            "project2": {
+                "title": "Some Freelance works",
+                "desc": "As A Fontend Developer"
+            },
+            "project3": {
+                "title": "few fun projects",
+                "desc": "Which Are Very Useful"
+            },
+            "project4": {
+                "title": "bankbuddy",
+                "desc": "College Final Project ~ Banking Help As Chatbot/Voicebot [JS + ML]"
+            },
+            "ending": "WORMHOLE",
+            "ending2": "Voyage to next section"
+        },
+        "skills": {
+            "title": "Skills & Experience",
+            "desc": "Key responsibilities",
+            "experience": [
+                {
+                    "title": "Freelancing",
+                    "subtitle": "(College)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "In college with some friends I started freelancing journey aiming to upgrade my frontend skills to industry label. I have worked with 2 groups of students Makscube and RandomBoiz, providing software solutions, being there lead frontend developer."
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(05/2021 - Present)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "Designing, prototyping and preparing images [Figma, Adobe XD, Photoshop]",
+                        "Building, testing & maintaining front-end",
+                        "Developing Backend, Database in a 2-man team [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "Reduced bounce rate by 30%",
+                        "Reduced the manual efforts of operation team by 80% by making quotation generator and invoice generator [Frontend]",
+                        "Developed HRM portal. It is a leave management dashboard for employees and management. The software is connected to the attendance management, payroll and payslip system. [Full-stack]",
+                        "Improved company internal architecture by building portfolio generator [Full-stack], Human resource management system [Full-stack] etc.",
+                        "Developed a video player app for android [Flutter]",
+                        "A fun project: Built a chrome extension to make invoice uploading easier in GEM portal while bunch-biding. It helps bunch bidding process 50% easier."
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "Curriculum Vitae",
+            "desc": "Click To Expand Your Preferred Resume Template"
+        },
+        "about": {
+            "title": "About Me",
+            "desc": "Fast | Hardworking | Disciplined, But Beyond That..."
+        },
+        "contact": {
+            "title": "CONTACT",
+            "title2": "Let's get in touch",
+            "heading": "Tell us a little about your project and we'll be in touch",
+            "heading2": [
+                "Let's Proceed",
+                "to the next step"
+            ],
+            "name": "Your Name",
+            "desc": "Any Messages?",
+            "contact": "Contact Info",
+            "reason": {
+                "title": "How can I help you?",
+                "option": [
+                    "Hire me",
+                    "Some tips / Report a bug",
+                    "Just a chat",
+                    "Others"
+                ]
+            },
+            "ending": "Don't like forms? Drop a quick HI @ my socials ~"
+        },
+        "footer": "Thank you for visiting, have a nice day"
+    },
+    "ben": {
+        "hero": {
+            "name": "অয়ন কোলে",
+            "title": "হ্যালো 👋, আমার ইন্টারেক্টিভ পরিচয়পত্রে আপনাকে স্বাগতম। আমি একজন ভারত ভিত্তিক ফুল-স্ট্যাক ডেভেলপার।",
+            "action": "আমার পরিচয়",
+            "intro": [
+                "সৃজনশীল ডেভেলপার",
+                "ওয়েব ডিজাইনার",
+                "সমস্যা সমাধানকারক"
+            ]
+        },
+        "work": {
+            "title": "কার্যক্রম",
+            "title2": "আমার কয়েকটি কাজ",
+            "project1": {
+                "title": "আমার সারসংকলন",
+                "desc": "Figma, React + GSAP ~ কিছু পছন্দসই সরঞ্জাম"
+            },
+            "project2": {
+                "title": "কিছু ফ্রিল্যান্সিং কাজ",
+                "desc": "ফ্রন্টএন্ড ডেভেলপার হিসাবে"
+            },
+            "project3": {
+                "title": "কয়েকটি মজার প্রকল্প",
+                "desc": "যা অনেক সময়ে দরকারী"
+            },
+            "project4": {
+                "title": "ব্যাংকবাডি",
+                "desc": "কলেজের প্রধান প্রকল্প ~ চ্যাটবট/ভয়েসবট হিসাবে ব্যাংকিং সহায়তা [JS + ML]"
+            },
+            "ending": "ওয়ার্মহোল",
+            "ending2": "পরবর্তী বিভাগে ভ্রমণ"
+        },
+        "skills": {
+            "title": "দক্ষতা এবং অভিজ্ঞতা",
+            "desc": "মূল দায়িত্ব",
+            "experience": [
+                {
+                    "title": "ফ্রিল্যান্সিং",
+                    "subtitle": "(কলেজ)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "ফ্রন্টএন্ড দক্ষতাকে ইন্ডাস্ট্রি লেবেলে আপগ্রেড করার লক্ষ্যে আমি আমার ফ্রিল্যান্সিং যাত্রা শুরু করি। কলেজে কিছু বন্ধুর সাথে আমি Makscube, Randomboiz, এই 2 টি গ্রুপের সাথে ফ্রন্টএন্ড ডেভেলপার হয়ে যুক্ত ছিলাম এবং সফ্টওয়্যার সমাধান প্রদান করতাম।"
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(০৫/২০২১ - বর্তমান)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "নকশা প্রস্তুতি, প্রোটোটাইপিং এবং ইমেজ প্রস্তুত করা [Figma, Adobe XD, Photoshop]",
+                        "ফ্রন্টএন্ড তৈরী, যাচাইকরণ এবং রক্ষণাবেক্ষণ",
+                        "2-জনের দলে ব্যাকএন্ড, ডেটাবেস তৈরি করা [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "বাউন্স রেট ৩০% কমিয়েছি",
+                        "কোটেশন জেনারেটর এবং ইনভয়েস জেনারেটর তৈরি করে অপারেশন টিমের ম্যানুয়াল প্রচেষ্টা 80% কমিয়েছি [Frontend]",
+                        "এইচআরএম পোর্টাল তৈরি করেছি। এটি কর্মচারী এবং প্রসাশনের জন্য একটি ছুটি ব্যবস্থাপনা ড্যাশবোর্ড। সফ্টওয়্যারটি উপস্থিতি পরিচালনার, বেতন এবং পেস্লিপ সিস্টেমের সাথে সংযুক্ত। [Full-stack]",
+                        "পোর্টফোলিও জেনারেটর, হিউম্যান রিসোর্স ম্যানেজমেন্ট সিস্টেম ইত্যাদি তৈরি করে কোম্পানির অভ্যন্তরীণ স্থাপত্য উন্নত করেছি [Full-stack]",
+                        "অ্যান্ড্রয়েডের জন্য একটি ভিডিও প্লেয়ার অ্যাপ তৈরি করেছি [Flutter]",
+                        "একটি মজার প্রকল্প: GEM বিডিংয়ের সময় GEM পোর্টালে চালান আপলোড করা সহজ করতে একটি ক্রোম এক্সটেনশন তৈরি করেছি এটি বিডিং প্রক্রিয়া ৫০% সহজে সাহায্য করে।"
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "কর্মজীবন বৃত্তান্ত",
+            "desc": "আপনার পছন্দের একটি প্রসারিত করতে ক্লিক করুন"
+        },
+        "about": {
+            "title": "আমার সম্পর্কে",
+            "desc": "দ্রুত | পরিশ্রমী | সুশৃঙ্খল, কিন্তু এর বাইরে..."
+        },
+        "contact": {
+            "title": "যোগাযোগ",
+            "title2": "সংস্পর্শে থাকা যাক",
+            "heading": "আপনার প্রকল্প সম্পর্কে আমাদের একটু বলুন এবং আমরা যোগাযোগে থাকবো",
+            "heading2": [
+                "আসুন পরবর্তী",
+                "ধাপে এগিয়ে যাই"
+            ],
+            "name": "আপানার নাম",
+            "desc": "কোনো বার্তা?",
+            "contact": "যোগাযোগের তথ্য",
+            "reason": {
+                "title": "আপনাকে কিভাবে সাহায্য করতে পারি?",
+                "option": [
+                    "আমাকে নিয়োগ করুন",
+                    "কিছু টিপস / বাগ রিপোর্ট",
+                    "শুধু একটি চ্যাট",
+                    "অন্যকিছু"
+                ]
+            },
+            "ending": "ফর্ম পছন্দ করেন না? আমার সোশ্যাল মিডিয়াতে একটি দ্রুত হাই ড্রপ করুন ~"
+        },
+        "footer": "আসার জন্য ধন্যবাদ! আপনার দিনটি শুভ হোক"
+    },
+    "hi": {
+        "hero": {
+            "name": "अयान कोली",
+            "title": "हैलो 👋, मेरे इंटरएक्टिव परिचय में आपका स्वागत है। मैं भारत में स्थित एक फुल-स्टैक डेवलपर हूं।",
+            "action": "हमें और जानें",
+            "intro": [
+                "रचनात्मक डेवलपर",
+                "वेब डिजाइनर",
+                "एक समस्या समाधानकारी"
+            ]
+        },
+        "work": {
+            "title": "क्रियाकलाप",
+            "title2": "मेरी कुछ रचनाएँ",
+            "project1": {
+                "title": "रिज्यूमे और पोर्टफोलियो",
+                "desc": "Figma, React + GSAP ~ पसंदीदा उपकरण"
+            },
+            "project2": {
+                "title": "फ्रीलांस प्रोजेक्ट्स",
+                "desc": "एक फॉन्टेंड डेवलपर के रूप में"
+            },
+            "project3": {
+                "title": "कुछ मज़ेदार प्रोजेक्ट",
+                "desc": "जो कभी-कभी बहुत उपयोगी होते हैं"
+            },
+            "project4": {
+                "title": "बैंकबाडी",
+                "desc": "कॉलेज फाइनल प्रोजेक्ट ~ चैटबॉट/वॉइसबॉट के रूप में बैंकिंग सहायता [JS + ML]"
+            },
+            "ending": "वर्महोल",
+            "ending2": "अगले भाग के लिए यात्रा"
+        },
+        "skills": {
+            "title": "कौशल और अनुभव",
+            "desc": "महत्वपूर्ण जिम्मेदारियाँ",
+            "experience": [
+                {
+                    "title": "फ्रीलांस",
+                    "subtitle": "(कॉलेज)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "मैंने अपने फ्रंटएंड कौशल को एक उद्योग लेबल में अपग्रेड करने के उद्देश्य से अपनी फ्रीलांसिंग यात्रा शुरू की। कॉलेज में कुछ दोस्तों के साथ मैं Makscube, Randomboiz, इन 2 समूहों के साथ फ्रंटएंड डेवलपर्स के रूप में जुड़ा था और सॉफ्टवेयर समाधान प्रदान करता था।"
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(०५/२०२१ - वर्तमान)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "डिजाइनिंग, प्रोटोटाइपिंग और इमेज तैयार करना [Figma, Adobe XD, Photoshop]",
+                        "फ्रंट-एंड का निर्माण, परीक्षण और रखरखाव",
+                        "2-मैन टीम में बैकएंड, डेटाबेस का विकास करना [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "बाउंस दर में 30% की कमी",
+                        "उद्धरण जनरेटर और चालान जनरेटर बनाकर ऑपरेशन टीम के मैन्युअल प्रयासों को 80% कम कर दिया [Frontend]",
+                        "मैंने एचआरएम पोर्टल विकसित किया है। यह कर्मचारियों और प्रबंधन के लिए अवकाश प्रबंधन डैशबोर्ड है। सॉफ्टवेयर उपस्थिति प्रबंधन, पेरोल और पेस्लिप सिस्टम से जुड़ा है [Full-stack]",
+                        "पोर्टफोलियो जनरेटर [फुल-स्टैक], मानव संसाधन प्रबंधन प्रणाली आदि का निर्माण करके कंपनी की आंतरिक संरचना में सुधार। [Full-stack]",
+                        "Android के लिए एक वीडियो प्लेयर ऐप विकसित किया [Flutter]",
+                        "एक मजेदार प्रोजेक्ट: बंच-बिडिंग के दौरान GEM पोर्टल में चालान अपलोड करना आसान बनाने के लिए एक क्रोम एक्सटेंशन बनाया गया। यह समूह बोली प्रक्रिया को 50% आसान बनाने में मदद करता है।"
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "कार्य जीवन कौशल पत्र",
+            "desc": "अपने पसंदीदा का विस्तार करने के लिए क्लिक करें"
+        },
+        "about": {
+            "title": "मेरे बारे मेँ",
+            "desc": "तेज | मेहनती | अनुशासित, लेकिन उससे परे ..."
+        },
+        "contact": {
+            "title": "संपर्क",
+            "title2": "संस्पर्श में रहते हैं",
+            "heading": "अपने प्रोजेक्ट के बारे में हमें कुछ बताएं और हम संपर्क में रहेंगे",
+            "heading2": [
+                "चलिए अगले कदम",
+                "पर चलते हैं"
+            ],
+            "name": "अप का नाम",
+            "desc": "कोई संदेश?",
+            "contact": "संपर्क सूचना",
+            "reason": {
+                "title": "मैं आपकी कैसे मदद कर सकता हूँ?",
+                "option": [
+                    "मुझे चुनिएँ",
+                    "कुछ टिप्स/बग की रिपोर्ट करें",
+                    "बस एक चैट",
+                    "दूसरों का कारण"
+                ]
+            },
+            "ending": "फॉर्म पसंद नहीं है? मेरे सोशल मीडिया पर HI डालें ~"
+        },
+        "footer": "पधारने के लिए धन्यवाद, आपका दिन शुभ हो"
+    },
+    "ta": {
+        "hero": {
+            "name": "அயன் கோலே",
+            "title": "வணக்கம் 👋, எனது ஊடாடும் விண்ணப்பத்திற்கு வரவேற்கிறோம். நான் இந்தியாவைச் சேர்ந்த முழு அடுக்கு டெவலப்பர்.",
+            "action": "என்னை அதிகம் தெரியும்",
+            "intro": [
+                "கிரியேட்டிவ் டெவலப்பர்",
+                "வலை வடிவமைப்பாளர்",
+                "ஒரு பிரச்சனை தீர்பவர்"
+            ]
+        },
+        "work": {
+            "title": "திட்டங்கள்",
+            "title2": "எனது சில படைப்புகள்",
+            "project1": {
+                "title": "ரெஸ்யூம் & போர்ட்ஃபோலியோ",
+                "desc": "Figma, React + GSAP ~ பிடித்த கருவிகள்"
+            },
+            "project2": {
+                "title": "ஃப்ரீலான்ஸ் திட்டங்கள்",
+                "desc": "ஒரு எழுத்துரு டெவலப்பராக"
+            },
+            "project3": {
+                "title": "சில வேடிக்கையான திட்டங்கள்",
+                "desc": "சில நேரங்களில் மிகவும் பயனுள்ளதாக இருக்கும்"
+            },
+            "project4": {
+                "title": "வங்கிநண்பா",
+                "desc": "கல்லூரி இறுதி திட்டம் ~ Chatbot/Voicebot ஆக வங்கி உதவி [JS + ML]"
+            },
+            "ending": "புழுதுளை",
+            "ending2": "அடுத்த பகுதிக்கு பயணம்"
+        },
+        "skills": {
+            "title": "திறன்கள் மற்றும் அனுபவம்",
+            "desc": "முக்கிய பொறுப்புகள்",
+            "experience": [
+                {
+                    "title": "ஃப்ரீலான்சிங்",
+                    "subtitle": "(கல்லூரி)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "எனது ஃப்ரென்டென்ட் திறன்களை தொழில்துறை லேபிளாக மேம்படுத்தும் நோக்கத்துடன் எனது ஃப்ரீலான்சிங் பயணத்தைத் தொடங்கினேன். கல்லூரியில் சில நண்பர்களுடன் சேர்ந்து, நான் Makscube, Randomboiz, இந்த 2 குழுக்களுடன் முன்னணி டெவலப்பர்களாகவும் மென்பொருள் தீர்வுகளை வழங்கவும் தொடர்பு கொண்டேன்."
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(௦௫/௨௦௨௧ - தற்போது)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "படங்களை வடிவமைத்தல், முன்மாதிரி செய்தல் மற்றும் தயாரித்தல் [Figma, Adobe XD, Photoshop]",
+                        "கட்டிடம், சோதனை மற்றும் முன் இறுதியில் பராமரித்தல்",
+                        "2 பேர் கொண்ட குழுவில் பின்தளம், தரவுத்தளத்தை உருவாக்குதல் [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "பவுன்ஸ் வீதம் 30% குறைக்கப்பட்டது",
+                        "மேற்கோள் ஜெனரேட்டர் மற்றும் விலைப்பட்டியல் ஜெனரேட்டரை உருவாக்குவதன் மூலம் செயல்பாட்டுக் குழுவின் கைமுறை முயற்சிகளை 80% குறைத்தது [Frontend]",
+                        "நான் HRM போர்ட்டலை உருவாக்கினேன். இது ஊழியர்கள் மற்றும் நிர்வாகத்திற்கான விடுமுறை மேலாண்மை டாஷ்போர்டு ஆகும். இந்த மென்பொருள் வருகை மேலாண்மை, ஊதியம் மற்றும் கட்டணச் சீட்டு அமைப்புடன் இணைக்கப்பட்டுள்ளது. [Full-stack]",
+                        "போர்ட்ஃபோலியோ ஜெனரேட்டர் [முழு-ஸ்டாக்], மனித வள மேலாண்மை அமைப்பு போன்றவற்றை உருவாக்குவதன் மூலம் நிறுவனத்தின் உள் கட்டமைப்பு மேம்படுத்தப்பட்டது. [Full-stack]",
+                        "ஆண்ட்ராய்டுக்கான வீடியோ பிளேயர் செயலியை உருவாக்கியுள்ளது [Flutter]",
+                        "ஒரு வேடிக்கையான திட்டம்: GEM போர்ட்டலில் பன்ச்-பைடிங் செய்யும் போது விலைப்பட்டியல் பதிவேற்றத்தை எளிதாக்க, ஒரு குரோம் நீட்டிப்பு உருவாக்கப்பட்டுள்ளது. இது ஏலம் எடுக்கும் செயல்முறையை 50% எளிதாக்க உதவுகிறது."
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "Curriculum Vitae",
+            "desc": "உங்கள் விருப்பமான ஒன்றை விரிவாக்க கிளிக் செய்யவும்"
+        },
+        "about": {
+            "title": "என்னை பற்றி",
+            "desc": "வேகமாக | கடின உழைப்பாளி | ஒழுக்கம், ஆனால் அதையும் தாண்டி..."
+        },
+        "contact": {
+            "title": "தொடர்பு",
+            "title2": "தொடர்பு கொள்வோம்",
+            "heading": "உங்கள் திட்டத்தைப் பற்றி எங்களிடம் கொஞ்சம் சொல்லுங்கள், நாங்கள் தொடர்பில் இருப்போம்",
+            "heading2": [
+                "அடுத்த படிக்கு",
+                "செல்லலாம்"
+            ],
+            "name": "உங்கள் பெயர்",
+            "desc": "ஏதேனும் செய்திகள் உள்ளதா?",
+            "contact": "தொடர்பு தகவல்",
+            "reason": {
+                "title": "நான் உங்களுக்கு எப்படி உதவ முடியும்?",
+                "option": [
+                    "என்னை வேலைக்கு எடுத்துக்கொள்ளுங்கள்",
+                    "சில குறிப்புகள் / பிழையைப் புகாரளிக்கவும்",
+                    "வெறும் அரட்டை",
+                    "மற்றவைகள்"
+                ]
+            },
+            "ending": "படிவங்கள் பிடிக்கவில்லையா? எனது சமூக ஊடகத்தில் ஒரு HI ஐ விடுங்கள் ~"
+        },
+        "footer": "வருகைக்கு நன்றி, இனிய நாள்"
+    },
+    "es": {
+        "hero": {
+            "name": "Ayan Koley",
+            "title": "Hola 👋, bienvenido a mi currículum interactivo. Soy un desarrollador de pila completa con sede en India.",
+            "action": "Conóceme más",
+            "intro": [
+                "Desarrollador creativo",
+                "Diseñador web",
+                "Solucionador de problemas"
+            ]
+        },
+        "work": {
+            "title": "PROYECTOS",
+            "title2": "algunos de mis trabajos",
+            "project1": {
+                "title": "Resume & Portfolio",
+                "desc": "Figma, React + GSAP ~ herramientas favoritas"
+            },
+            "project2": {
+                "title": "Algunos trabajos freelance",
+                "desc": "Como desarrollador de Fontend"
+            },
+            "project3": {
+                "title": "Algunos proyectos divertidos",
+                "desc": "Que son muy útiles a veces"
+            },
+            "project4": {
+                "title": "Compañero de banco",
+                "desc": "Proyecto final de la universidad ~ Ayuda bancaria como Chatbot/Voicebot [JS + ML]"
+            },
+            "ending": "AGUJERO-DE-GUSANO",
+            "ending2": "Viaje a la siguiente sección"
+        },
+        "skills": {
+            "title": "Habilidades y Experiencia",
+            "desc": "Responsabilidades clave",
+            "experience": [
+                {
+                    "title": "Autónomo",
+                    "subtitle": "(College)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "Comencé mi viaje como freelance con el objetivo de actualizar mis habilidades de frontend a una etiqueta de la industria. Junto con algunos amigos en la universidad, estuve asociado con Makscube, Randomboiz, estos 2 grupos como desarrolladores frontend y brindando soluciones de software."
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(05/2021 - Presente)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "Diseño, prototipado y preparación de imágenes. [Figma, Adobe XD, Photoshop]",
+                        "Construyendo, probando y manteniendo el front-end",
+                        "Desarrollo de backend, base de datos en un equipo de 2 personas [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "Tasa de rebote reducida en un 30%",
+                        "Redujo los esfuerzos manuales del equipo de operaciones en un 80% al hacer un generador de cotizaciones y un generador de facturas. [Frontend]",
+                        "Desarrollé el portal HRM. Es un panel de administración de licencias para empleados y gerencia. El software está conectado al sistema de gestión de asistencia, nómina y recibos de sueldo. [Full-stack]",
+                        "Se mejoró la arquitectura interna de la empresa al crear un generador de cartera [Full-stack], un sistema de gestión de recursos humanos, etc. [Full-stack]",
+                        "Desarrollé una aplicación de reproductor de video para Android. [Flutter]",
+                        "Un proyecto divertido: creó una extensión de Chrome para facilitar la carga de facturas en el portal de GEM mientras se realiza una oferta conjunta. Ayuda a agrupar el proceso de licitación un 50% más fácil."
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "Curriculum Vitae",
+            "desc": "Haga clic para expandir su preferido"
+        },
+        "about": {
+            "title": "Acerca de mí",
+            "desc": "rápido | trabajador | Disciplinado, pero más allá de eso..."
+        },
+        "contact": {
+            "title": "CONTACTO",
+            "title2": "mantengámonos en contacto",
+            "heading": "Cuéntanos un poco sobre tu proyecto y nos pondremos en contacto",
+            "heading2": [
+                "vamos al",
+                "siguiente paso"
+            ],
+            "name": "Su nombre",
+            "desc": "¿Algún mensaje?",
+            "contact": "Datos de contacto",
+            "reason": {
+                "title": "¿Le puedo ayudar en algo?",
+                "option": [
+                    "Contratame",
+                    "Algunos consejos / Informar de un error",
+                    "solo una charla",
+                    "Otras"
+                ]
+            },
+            "ending": "¿No te gustan los formularios? Deja un Hola en mis redes sociales ~"
+        },
+        "footer": "Gracias por su visita, que tenga un buen día."
+    },
+    "ja": {
+        "hero": {
+            "name": "アヤン・コーリー",
+            "title": "こんにちは 👋、ぼくのインタラクティブな履歴書へようこそ。私はインドを拠点とするフルスタック開発者です。",
+            "action": "私をもっと知って",
+            "intro": [
+                "クリエイティブ デベロッパー",
+                "ウェブデザイナー",
+                "問題解決者"
+            ]
+        },
+        "work": {
+            "title": "プロジェクト",
+            "title2": "私の作品のいくつか",
+            "project1": {
+                "title": "履歴書 と ポートフォリオ",
+                "desc": "Figma, React + GSAP ~ お気に入りのツール"
+            },
+            "project2": {
+                "title": "一部フリーランス作品",
+                "desc": "フォントエンド開発者として"
+            },
+            "project3": {
+                "title": "いくつかの楽しいプロジェクト",
+                "desc": "時々非常に便利です"
+            },
+            "project4": {
+                "title": "バンクバディ",
+                "desc": "大学の最終プロジェクト ~ Chatbot/Voicebot としてのバンキング支援 [JS + ML]"
+            },
+            "ending": "ワームホール",
+            "ending2": "次のセクションへの航海"
+        },
+        "skills": {
+            "title": "スキルと経験",
+            "desc": "主要な責務",
+            "experience": [
+                {
+                    "title": "フリーランス",
+                    "subtitle": "(College)",
+                    "skills": [
+                        "Frontend"
+                    ],
+                    "role": [
+                        "フロントエンドのスキルを業界のラベルにアップグレードすることを目的として、フリーランスの旅を始めました。大学の友人たちと一緒に、フロントエンド開発者として、またソフトウェア ソリューションを提供する 2 つのグループ、Makscube と Randomboiz に参加していました。"
+                    ]
+                },
+                {
+                    "title": "Labkafe | Full-stack developer",
+                    "subtitle": "(五 / にぜろにいち - プレゼント)",
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Vue",
+                        "PHP",
+                        "Python",
+                        "Figma",
+                        "Photoshop",
+                        "MySQL",
+                        "Flutter"
+                    ],
+                    "role": [
+                        "画像のデザイン、プロトタイピング、準備 [Figma, Adobe XD, Photoshop]",
+                        "フロントエンドの構築、テスト、保守",
+                        "2 人のチームでバックエンド、データベースを開発 [PHP Laravel, Python, MySQL, phpmyadmin]",
+                        "直帰率を 30% 削減",
+                        "見積もりジェネレーターと請求書ジェネレーターを作成することで、運用チームの手作業を 80% 削減 [Frontend]",
+                        "HRMポータルを開発しました。 従業員と管理者のための休暇管理ダッシュボードです。 このソフトウェアは、勤怠管理、給与計算、給与明細システムに接続されています。[Full-stack]",
+                        "ポートフォリオジェネレーター[フルスタック]、人事管理システムなどの構築による社内アーキテクチャの改善。[Full-stack]",
+                        "Android 用動画再生アプリを開発 [Flutter]",
+                        "楽しいプロジェクト: 一括入札中に GEM ポータルで請求書を簡単にアップロードできるように、Chrome 拡張機能を作成しました。 一括入札プロセスが 50% 容易になります。"
+                    ]
+                }
+            ]
+        },
+        "cv": {
+            "title": "Curriculum Vitae",
+            "desc": "クリックして優先するものを展開します"
+        },
+        "about": {
+            "title": "私について",
+            "desc": "高速 | 勤勉な | 勤勉な | 規律あるが、それを超えて..."
+        },
+        "contact": {
+            "title": "コンタクト",
+            "title2": "連絡を取ろう",
+            "heading": "あなたのプロジェクトについて少し教えてください。ご連絡いたします",
+            "heading2": [
+                "次のステップに",
+                "進めましょう"
+            ],
+            "name": "あなたの名前",
+            "desc": "メッセージはありますか?",
+            "contact": "連絡先情報",
+            "reason": {
+                "title": "どんな御用でしょうか？",
+                "option": [
+                    "私を雇う",
+                    "いくつかのヒント / バグを報告する",
+                    "ただのチャット",
+                    "その他"
+                ]
+            },
+            "ending": "フォームが気に入らない？ ソーシャル メディアに HI をドロップ ~"
+        },
+        "footer": "訪問していただきありがとうございます、良い一日を"
+    }
+}

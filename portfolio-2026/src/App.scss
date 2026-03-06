@@ -1,0 +1,32 @@
+.scrollbar-track{
+    background: var(--theme) !important;
+}
+.scrollbar-thumb{
+    cursor: pointer;
+}
+
+.lang-ben, .lang-hi{
+    --fh: 70px;
+    --flg: 17px;
+    font-size: 14px;
+    --heading2: 100px;
+    --fxl: 20px;
+    --f3xl: 35px;
+    #About .text h3{
+        font-size: 65px;
+        line-height: 1.3;
+    }
+}
+.lang-es{
+    --heading2: 120px;
+}
+.lang-ta, .lang-ja{
+    --fxl: 20px;
+    --fh: 60px;
+    --flg: 15px;
+    --heading2: 80px;
+    --f3xl: 35px;
+    .tagLine{
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,223 @@
+#Header {
+    height: calc(100vh - var(--navbarHeight));
+    min-height: 500px;
+    margin-top: var(--navbarHeight);
+    max-height: 1024px;
+    border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.2);
+
+    .Link>* {
+        pointer-events: none;
+    }
+
+    h1 {
+        color: var(--themeOrange);
+        font-family: var(--thunder);
+        font-weight: 900;
+        font-size: var(--fh);
+        width: max-content;
+        line-height: 1;
+
+
+        &::before,
+        &::after {
+            color: #9177AB;
+            font-size: calc(var(--fh) / 2);
+            font-family: var(--signika);
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            left: -40px;
+            content: '<';
+        }
+
+        &::after {
+            right: -60px;
+            content: '/>';
+        }
+
+    }
+
+    .description {
+        font-size: var(--flg);
+        font-weight: 400;
+        color: rgba($color: #ffffff, $alpha: 0.8);
+        line-height: 190%;
+        margin-bottom: var(--px);
+    }
+
+    .callToActionBtn {
+        width: max-content;
+        display: flex;
+        gap: 20px;
+        height: 67px;
+        font-size: var(--flg);
+        align-items: center;
+        color: var(--themeGreen);
+        cursor: pointer;
+
+        .icon {
+            zoom: 0.8;
+            pointer-events: none;
+            width: 32px;
+            height: 67px;
+            border-radius: 60px;
+            border: 3px solid #CECECE;
+
+            .ball {
+                width: 18px;
+                height: 18px;
+                border-radius: 50%;
+                background-color: white;
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: animateBall 1.5s ease-in-out infinite alternate;
+            }
+        }
+    }
+
+    .tagLine {
+        font-size: var(--flg);
+        color: #8AB4F8;
+        font-family: var(--pixel);
+        top: 100px;
+        left: 55px;
+        z-index: 10;
+    }
+
+    .jsLogo {
+        position: absolute;
+        left: 10px;
+        width: 50px;
+        bottom: 155px;
+    }
+
+    .fLogo {
+        position: absolute;
+        top: 0px;
+        left: 100px;
+        width: 40px;
+    }
+
+    .gsapLogo {
+        left: 0;
+        top: 150px;
+        zoom: 0.7;
+    }
+
+    .heroImg {
+        width: 450px;
+    }
+
+    .decoration {
+        &.decoration1 {
+            // </> | inside texts
+            position: absolute;
+            transform: rotate(20deg);
+            top: -100px;
+            left: 0;
+            color: rgba($color: #ffffff, $alpha: 0.2);
+            font-size: 100px;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        &.decoration2 {
+            // polygon | inside texts
+            position: absolute;
+            width: 44px;
+            height: 50px;
+            bottom: 50px;
+            left: 50px;
+            transform: rotate(20deg);
+        }
+
+        &.decoration3 {
+            // pattern | inside texts
+            position: absolute;
+            right: 0;
+            bottom: 100px;
+            width: 100px;
+        }
+
+        &.decoration4 {
+            // star | inside text
+            position: absolute;
+            top: -10px;
+            right: 90px;
+            font-size: 40px;
+            font-weight: 300;
+            color: rgba($color: #ffffff, $alpha: 0.2);
+        }
+
+        &.decoration5 {
+            // blue ball at bottom
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            background-color: #0D6D8E;
+            border-radius: 50%;
+            bottom: -18px;
+            left: 300px;
+        }
+
+        &.decoration6 {
+            // cylinder
+            position: absolute;
+            top: 10px;
+            right: 40%;
+            width: 30px;
+            height: 70px;
+            border-radius: 45px;
+            transform: rotate(-35deg);
+            border: 2px solid rgba($color: #ffffff, $alpha: 0.2);
+        }
+
+        &.decoration7 {
+            // blue ball at top right
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            background-color: #0D6D8E;
+            border-radius: 50%;
+            top: 50px;
+            right: 200px;
+        }
+
+        &.decoration8 {
+            // orange ball
+            position: absolute;
+            height: 15px;
+            width: 15px;
+            background-color: #FD7246;
+            border-radius: 50%;
+            top: 10px;
+            right: 100px;
+        }
+
+        &.decoration9 {
+            // design middle right
+            position: absolute;
+            right: 0;
+            top: 100px;
+            z-index: -10;
+            width: 100px;
+            height: auto;
+        }
+    }
+}
+
+@keyframes animateBall {
+    from {
+        transform: translateY(0) translateX(-50%);
+    }
+
+    to {
+        transform: translateY(calc(61px - 100%)) translateX(-50%);
+    }
+}

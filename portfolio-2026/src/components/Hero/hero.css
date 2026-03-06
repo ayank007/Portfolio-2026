@@ -1,0 +1,17 @@
+#Hero{
+}
+
+@keyframes gear{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+#gear{
+    transform-origin: center center;
+    transform-box: fill-box;
+    animation: gear 3s linear infinite forwards;
+}

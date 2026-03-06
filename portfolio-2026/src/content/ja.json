@@ -1,0 +1,72 @@
+{
+    "name": "アヤン・コーリー",
+    "hero": {
+        "title": "こんにちは 👋、ぼくのインタラクティブな履歴書へようこそ。私はインドを拠点とするフルスタック開発者です。",
+        "action": "私をもっと知って"
+    },
+    "work": {
+        "title": "プロジェクト",
+        "project1": {
+            "title": "Resume & Portfolio",
+            "desc": "Figma, React + GSAP ~ お気に入りのツール"
+        },
+        "project2": {
+            "title": "一部フリーランス作品",
+            "desc": "フォントエンド開発者として"
+        },
+        "project3": {
+            "title": "いくつかの楽しいプロジェクト",
+            "desc": "時々非常に便利です"
+        },
+        "project4": {
+            "title": "バンクバディ",
+            "desc": "大学の最終プロジェクト ~ Chatbot/Voicebot としてのバンキング支援 [JS + ML]"
+        },
+        "ending": "ワームホール"
+    },
+    "skills": {
+        "title": "スキルと経験",
+        "desc": "",
+        "experience": [
+            {
+                "title": "フリーランス",
+                "subtitle": "(College)",
+                "skills": ["Frontend"],
+                "role": ["フロントエンドのスキルを業界のラベルにアップグレードすることを目的として、フリーランスの旅を始めました。大学の友人たちと一緒に、フロントエンド開発者として、またソフトウェア ソリューションを提供する 2 つのグループ、Makscube と Randomboiz に参加していました。"]
+            },{
+                "title": "Labkafe | Full-stack developer",
+                "subtitle": "(五 / にぜろにいち - プレゼント)",
+                "skills": ["JavaScript","React","Vue","PHP","Python","Figma","Photoshop","MySQL","Flutter"],
+                "role": ["画像のデザイン、プロトタイピング、準備 [Figma, Adobe XD, Photoshop]",
+                "フロントエンドの構築、テスト、保守",
+                "2 人のチームでバックエンド、データベースを開発 [PHP Laravel, Python, MySQL, phpmyadmin]",
+                "直帰率を 30% 削減",
+                "見積もりジェネレーターと請求書ジェネレーターを作成することで、運用チームの手作業を 80% 削減 [Frontend]",
+                "ポートフォリオジェネレーター[フルスタック]、人事管理システムなどの構築による社内アーキテクチャの改善。[Full-stack]",
+                "Android 用動画再生アプリを開発 [Flutter]",
+                "楽しいプロジェクト: 一括入札中に GEM ポータルで請求書を簡単にアップロードできるように、Chrome 拡張機能を作成しました。 一括入札プロセスが 50% 容易になります。"]
+            }
+        ]
+    },
+    "cv": {
+        "title": "Curriculum Vitae",
+        "desc": "クリックして優先するものを展開します"
+    },
+    "about": {
+        "title": "私について",
+        "desc": "高速 | 勤勉な | 勤勉な | 規律あるが、それを超えて..."
+    },
+    "contact": {
+        "title": "コンタクト",
+        "heading": "あなたのプロジェクトについて少し教えてください。ご連絡いたします",
+        "name": "あなたの名前",
+        "desc": "メッセージはありますか?",
+        "contact": "連絡先情報",
+        "reason": {
+            "title": "どんな御用でしょうか？",
+            "option": ["私を雇う", "いくつかのヒント / バグを報告する", "ただのチャット", "その他"]
+        },
+        "ending": "フォームが気に入らない？ ソーシャル メディアに HI をドロップ ~"
+    },
+    "footer": "訪問していただきありがとうございます、良い一日を"
+}
