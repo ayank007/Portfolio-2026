@@ -122,9 +122,6 @@ body{
     background-color: var(--project3);
     border-radius: 5px;
 }
-section{
-    background-color: var(--theme);
-}
 .no-cursor{
     pointer-events: none;
 }
