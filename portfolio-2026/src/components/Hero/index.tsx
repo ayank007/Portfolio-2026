@@ -63,7 +63,7 @@ const Hero = ({ data }: any) => {
                         </div>
                         <h1>{data.name}</h1>
                     </div>
-                    <p className='description mt-4 text-xl'>
+                    <p className='description mt-4 text-base xl:text-xl'>
                         {data.title}
                     </p>
                     <Link to="/" hash="Work">

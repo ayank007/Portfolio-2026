@@ -1,8 +1,10 @@
 import { useLang } from '../App'
+import About from '../components/About'
 import Experience from '../components/Experience'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import ScrollReveal from '../utils/ScrollReveal'
+import Contact from '../components/Contact'
 
 const Home = () => {
     const { data } = useLang()
@@ -13,6 +15,8 @@ const Home = () => {
             <Hero data={data.hero} />
             <Projects />
             <Experience />
+            <About />
+            <Contact data={data.contact} />
         </>
     )
 }

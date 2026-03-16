@@ -5,6 +5,7 @@ import './index.css'
 
 import App from './App.tsx'
 import Home from './pages/Home.tsx'
+import Test from './pages/Test.tsx'
 
 // 1. Root Layout
 const rootRoute = createRootRoute({
@@ -17,9 +18,14 @@ const indexRoute = createRoute({
   path: '/',
   component: Home,
 })
+const testRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/test',
+  component: Test,
+})
 
 // 3. Register Router
-const routeTree = rootRoute.addChildren([indexRoute])
+const routeTree = rootRoute.addChildren([indexRoute, testRoute])
 const router = createRouter({ routeTree })
 
 declare module '@tanstack/react-router' {

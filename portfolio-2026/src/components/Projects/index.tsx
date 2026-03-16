@@ -93,7 +93,7 @@ const Projects = () => {
 
 
     return (
-        <div ref={containerRef} id='Projects' className="bg-white z-10 py-40 mt-[200px] opacity-0">
+        <div ref={containerRef} id='Projects' className="z-10 py-40 mt-[200px] opacity-0">
             <h2 id="projects-heading" className='h2 max-w-[800px] text-center mx-auto'>Checkout Some of My <span className='highlighted-orange'>Works/Projects</span></h2>
             <MarqueeCursor text={cursorText} />
             <div id="projects-content" className="mt-8 grid grid-cols-[repeat(2,1fr)] lg:grid-cols-4 gap-3 md:gap-10 px-4 xl:px-32 container mx-auto items-start z-10">
