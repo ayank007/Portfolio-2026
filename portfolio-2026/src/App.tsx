@@ -35,23 +35,33 @@ function App() {
     function update(time: number) {
       lenisRef.current?.lenis?.raf(time * 1000)
     }
-
     gsap.ticker.add(update)
     gsap.ticker.lagSmoothing(0)
+    return () => gsap.ticker.remove(update)
+  }, [])
+
+  // Force ScrollTrigger to ignore extension-injected height
+  useEffect(() => {
+    const refreshTrigger = () => {
+      ScrollTrigger.refresh();
+    };
+    // Refresh after a small delay to ensure extensions have finished injecting
+    const timer = setTimeout(refreshTrigger, 500);
+    window.addEventListener('resize', refreshTrigger);
 
     return () => {
-      gsap.ticker.remove(update)
+      clearTimeout(timer);
+      window.removeEventListener('resize', refreshTrigger);
     }
-  }, [])
+  }, []);
 
   return (
     <LangContext.Provider value={{ lang, setLang, data }}>
       <ReactLenis root ref={lenisRef} options={{ lerp: 0.1, duration: 1.5, autoRaf: false }}>
-        <div className="min-h-screen bg-black text-white">
+        {/* 'relative' is fine, but NO 'h-screen' here or scroll breaks */}
+        <div className="relative w-full text-white">
           <nav className="fixed top-0 w-full z-50 flex justify-between p-6 bg-black/40 backdrop-blur-md">
             <Link to="/">Home</Link>
-
-            {/* Example Language Switcher */}
             <select
               value={lang}
               onChange={(e) => setLang(e.target.value as LangCode)}

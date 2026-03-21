@@ -1,18 +1,9 @@
 #Contact {
-    border-bottom-left-radius: 100px;
-    border-bottom-right-radius: 100px;
-    padding-bottom: 100px;
+    >.footerContainer {
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
 
-    .left {
-        width: 550px;
-        display: flex;
-        align-items: center;
-    }
-
-    .right {
-        width: calc(100% - 550px);
-        min-width: 550px;
-        max-width: 100%;
+        padding-bottom: 100px;
     }
 
     .submitContactBtn {
@@ -35,11 +26,11 @@
         z-index: 2;
     }
 
-    .second-screen__sliding-text {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+    // .second-screen__sliding-text {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    // }
 
     .sliding-text--second-screen {
         opacity: 0;
@@ -110,10 +101,17 @@ form {
         font-size: var(--fxl);
     }
 
+    label {
+        width: 100%;
+        max-width: 640px;
+    }
+
     input,
     textarea {
         height: 45px;
-        width: 300px;
+        width: 100%;
+        min-width: 300px;
+        max-width: 640px;
         outline: none;
         padding-left: 15px;
         color: white;
@@ -240,5 +238,22 @@ form {
 .reasons {
     .title {
         opacity: 0.5;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .inpBg {
+        flex-flow: column;
+    }
+
+    form label {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .stepText {
+        transform: matrix(0.7, 0, 0, 0.7, 0, 0) !important;
+        margin-left: -50px;
     }
 }

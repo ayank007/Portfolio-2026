@@ -1,0 +1,199 @@
+#Footer {
+    min-height: 600px;
+    height: calc(100vh - var(--navbarHeight));
+    max-height: 1024px;
+    margin-bottom: 0;
+}
+
+.library {
+    --bg: #111;
+    border-right: 15px solid transparent;
+    border-image-source: url(../../assets/footer/frame1.png);
+    border-image-slice: 60;
+    border-image-repeat: round;
+    height: 200px;
+    width: 350px;
+    align-items: flex-start;
+    background-color: var(--bg);
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 40px;
+        background-color: #d2b48c20;
+    }
+
+    >div {
+        height: 160px;
+        width: 350px;
+        border-top: 5px solid transparent;
+        border-image-source: url(../../assets/footer/frame2.png);
+        border-image-slice: 60;
+        border-image-repeat: round;
+
+        &::before {
+            content: '';
+            display: block;
+            background-size: 160px 80px;
+            height: 100%;
+            width: 100%;
+            background-position: center bottom;
+            background-image: linear-gradient(to top, #d2b48c 5%, var(--bg) 6%, var(--bg) 7%, transparent 7%), linear-gradient(to bottom, var(--bg) 30%, transparent 30%), linear-gradient(to right, #b22222, #871a1a 5%, transparent 5%),
+                linear-gradient(to right, transparent 6%, #ff6347 6%, #ff3814 9%, transparent 9%), linear-gradient(to right, transparent 27%, #556b2f 27%, #39481f 34%, transparent 34%),
+                linear-gradient(to right, transparent 51%, #fa8072 51%, #f85441 57%, transparent 57%), linear-gradient(to bottom, var(--bg) 35%, transparent 35%), linear-gradient(to right, transparent 42%, #008080 42%, #004d4d 44%, transparent 44%),
+                linear-gradient(to right, transparent 45%, #008080 45%, #004d4d 47%, transparent 47%), linear-gradient(to right, transparent 48%, #008080 48%, #004d4d 50%, transparent 50%),
+                linear-gradient(to right, transparent 87%, #789 87%, #4f5d6a 91%, transparent 91%), linear-gradient(to bottom, var(--bg) 37.5%, transparent 37.5%), linear-gradient(to right, transparent 14%, #bdb76b 14%, #989244 20%, transparent 20%),
+                linear-gradient(to bottom, var(--bg) 40%, transparent 40%), linear-gradient(to right, transparent 10%, #808000 10%, #4d4d00 13%, transparent 13%), linear-gradient(to right, transparent 21%, #8b4513 21%, #5e2f0d 25%, transparent 25%),
+                linear-gradient(to right, transparent 58%, #8b4513 58%, #5e2f0d 64%, transparent 64%), linear-gradient(to right, transparent 92%, #2f4f4f 92%, #1c2f2f 95%, transparent 95%), linear-gradient(to bottom, var(--bg) 48%, transparent 48%),
+                linear-gradient(to right, transparent 96%, #2f4f4f 96%, #1c2f2f 99%, transparent 99%),
+                linear-gradient(to bottom, transparent 68.5%, transparent 76%, var(--bg) 76%, var(--bg) 77.5%, transparent 77.5%, transparent 86%, var(--bg) 86%, var(--bg) 87.5%, transparent 87.5%),
+                linear-gradient(to right, transparent 35%, #cd5c5c 35%, #bc3a3a 41%, transparent 41%), linear-gradient(to bottom, var(--bg) 68%, transparent 68%),
+                linear-gradient(to right, transparent 78%, #bc8f8f 78%, #bc8f8f 80%, transparent 80%, transparent 82%, #bc8f8f 82%, #bc8f8f 83%, transparent 83%), linear-gradient(to right, transparent 66%, #a52a2a 66%, #7c2020 85%, transparent 85%);
+        }
+    }
+}
+
+#Window {
+    --windowTheme: var(--theme);
+    --windowTheme2: #212528;
+    --windowTheme3: #156a67;
+    position: absolute;
+    left: 500px;
+    top: 100px;
+    transform: scale(0.9);
+
+    div {
+        box-sizing: border-box;
+        font-size: 10px;
+        width: 20em;
+        height: 25em;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(var(--windowTheme), var(--windowTheme)), repeating-linear-gradient(to bottom, var(--windowTheme3), var(--windowTheme3) 0.1em, var(--windowTheme) 0.1em, var(--windowTheme) 0.4em, transparent 0.4em, transparent 0.9em), linear-gradient(var(--windowTheme) 40%, var(--windowTheme3)), radial-gradient(circle, var(--windowTheme3) 30%, rgba(72, 209, 204, 0) 31%), radial-gradient(circle, #cbcbcb 50%, rgba(127, 255, 212, 0) 51%), linear-gradient(var(--windowTheme3), var(--windowTheme3)), linear-gradient(60deg, transparent 40%, var(--windowTheme2) 41%), linear-gradient(-60deg, transparent 40%, var(--windowTheme2) 41%), linear-gradient(to right, var(--windowTheme3) 0.1em, var(--windowTheme2) 0.1em), linear-gradient(to bottom, #000000 30%, #151415);
+        background-size: calc(100% - 0.4em) 2em, calc(100% - 0.6em) 6em, 0.1em 20em, 1.1em 1.1em, 10em 10em, 5em 0.1em, 3.5em 2em, 3.5em 2em, 0.4em 5em, 100% 100%;
+        background-position: 50% 0.2em, 50% 2.7em, 1.1em 0.2em, 0.6em 19em, 80% 18%, right 3.8em bottom 2em, right 6em bottom 0, right 3em bottom 0, right 6em bottom 0, 0 0;
+        border: 0.1em solid var(--windowTheme3);
+        border-top-color: var(--windowTheme);
+        box-shadow: 0 0 0 0.8em var(--windowTheme2), 0 0 0 0.9em var(--windowTheme);
+
+        &::after {
+            content: '';
+            width: 3em;
+            position: absolute;
+            height: 2em;
+            bottom: 4em;
+            display: block;
+            right: 3em;
+            background-color: var(--windowTheme2);
+            border-radius: 2em 0;
+            border-top: 0.1em solid var(--windowTheme3);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 24em;
+            height: 2em;
+            left: -2.1em;
+            bottom: -2.2em;
+            background-color: var(--windowTheme2);
+            border: 0.1em solid var(--windowTheme);
+            border-top-color: var(--windowTheme3);
+            box-shadow: 0 1.4em 0 -0.8em var(--windowTheme2), 0 1.4em 0 -0.7em var(--windowTheme);
+        }
+    }
+}
+
+.football {
+    position: absolute;
+    bottom: 199px;
+    left: 270px;
+    width: 60px;
+    filter: brightness(0.6);
+}
+
+.messi {
+    position: absolute;
+    width: 150px;
+    background-color: black;
+    padding: 0;
+    height: 90px;
+    border: 7px solid transparent;
+    border-image-source: url('../../assets/footer/frame1.png');
+    border-image-slice: 60;
+    border-image-repeat: round;
+    top: 80px;
+    left: 30px;
+    // overflow: hidden;
+    filter: brightness(0.7);
+
+    img {
+        border: 7px solid transparent;
+        box-sizing: content-box;
+        border-image-source: url('../../assets/footer/frame2.png');
+        border-image-slice: 60;
+        border-image-repeat: round;
+        max-width: unset;
+        height: 100%;
+        width: 130px;
+        top: -7px;
+    }
+}
+
+.ronaldo {
+    position: absolute;
+    top: 80px;
+    left: 197px;
+    display: flex;
+    justify-content: center;
+    width: 130px;
+    filter: brightness(0.7);
+    height: 150px;
+    border: 8px solid transparent;
+    border-image-source: url('../../assets/footer/frame.png');
+    border-image-slice: 60;
+    border-image-repeat: round;
+    overflow: hidden;
+
+    img {
+        height: 140px;
+        max-width: unset;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #Footer {
+        height: 750px;
+    }
+
+    #Window {
+        left: unset;
+        right: 10px;
+        transform: scale(0.7);
+    }
+
+    .football {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 545px) {
+
+    #Window {
+        right: -15px;
+    }
+
+    .ronaldo {
+        position: absolute;
+        top: 185px;
+        left: 20px;
+    }
+
+    .messi {
+        left: 20px;
+    }
+}

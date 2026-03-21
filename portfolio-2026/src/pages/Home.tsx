@@ -5,6 +5,7 @@ import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import ScrollReveal from '../utils/ScrollReveal'
 import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 const Home = () => {
     const { data } = useLang()
@@ -17,6 +18,7 @@ const Home = () => {
             <Experience />
             <About />
             <Contact data={data.contact} />
+            <Footer data={data.footer} />
         </>
     )
 }

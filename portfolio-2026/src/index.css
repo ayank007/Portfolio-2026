@@ -106,13 +106,21 @@ html.lenis, html.lenis body {
 html{
     scroll-behavior: smooth;
     scroll-padding-top: var(--navbarHeight);
+    padding: 0;
+    margin: 0;background-color: #030712;
 }
 body{
     padding: 0;
     margin: 0;
     overflow-x: hidden !important;
     background-color: #D1FAE5;
-    color: var(--about);
+    color: var(--about);overscroll-behavior-y: none;
+}
+body > :not(#root):not(script):not(style) {
+  display: none !important;
+  position: absolute !important;
+  height: 0 !important;
+  pointer-events: none !important;
 }
 ::-webkit-scrollbar {
     background-color: var(--theme);
@@ -200,4 +208,10 @@ body{
     display: inline-block;
     padding: 14px 25px 4px;
     border-radius: 100px;
+}
+
+@media screen and (max-width: 480px) {
+    :root {
+        --px: 20px;
+    }
 }
