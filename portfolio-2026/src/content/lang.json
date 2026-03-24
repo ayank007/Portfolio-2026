@@ -2,7 +2,7 @@
     "eng": {
         "hero": {
             "name": "Ayan Koley",
-            "title": "Hello 👋, welcome to my interactive resume. My name is Ayan, I’m a full-stack developer based in Kolkata. I specializing in building efficient, high-performance web solutions, solving interesting coding problems. I am a quick learner, quick settler and always ready to accept new challenges.",
+            "title": "Hello 👋, welcome to my interactive resume. My name is Ayan, I’m a software engineer based in Kolkata. I am always ready to accept new challenges. Have something for me? Let's connect!",
             "action": "Know me more",
             "intro": [
                 "Creative Developer",
@@ -11,7 +11,7 @@
                 "Software Engineer"
             ]
         },
-        "work": {
+        "projects": {
             "title": "PROJECTS",
             "title2": "Some of my works",
             "project1": {
@@ -33,55 +33,82 @@
             "ending": "WORMHOLE",
             "ending2": "Voyage to next section"
         },
-        "skills": {
-            "title": "Skills & Experience",
-            "desc": "Key responsibilities",
-            "experience": [
+        "career": {
+            "title": "EXPERIENCE",
+            "title2": "I am a dedicated Full-stack Developer with 5+ years of experience focused on building efficient, high-performance web solutions. I am at a point of my career where I want to be surrounded by a team that I can grow with. And thus looking for an opportunity contribute to exiting projects and environment!",
+            "data": [
                 {
-                    "title": "Freelancing",
-                    "subtitle": "(College)",
-                    "skills": [
-                        "Frontend"
-                    ],
-                    "role": [
-                        "In college with some friends I started freelancing journey aiming to upgrade my frontend skills to industry label. I have worked with 2 groups of students Makscube and RandomBoiz, providing software solutions, being there lead frontend developer."
+                    "title": "Labkafe",
+                    "title2": "Full-stack Developer",
+                    "timeline": "May, 2021 - Oct, 2023",
+                    "content": [
+                        "**Led the front-end department.**",
+                        "Designed and prototyped front-end assets (Figma, Adobe XD). Built, tested, and maintained front-end for marketing campaigns and the website. **Reduced bounce rate by 30%.**",
+                        "**Reduced the manual efforts of operation team by 80%**, making two quotations plus invoice generator.",
+                        "Developed HRM portal. It is a leave management dashboard for employees and management. The software is connected to the attendance management, payroll and payslip system.",
+                        "Improved company internal architecture by building portfolio generator, review management system.",
+                        "Developed multiple **report generators & lead generators** tool using Python, BS4, Selenium, PHP, AppScript, DataStudio.",
+                        "Developed **WhatsApp bot**. Increased customer experience.",
+                        "Developed a **video player app** for android.",
+                        "Self-Initiated Projects for Efficiency & Automation:",
+                        "- **Floor-planner:** A game like webapp for planning a lab, aiming to reduce deal processing time.",
+                        "- **GeM Chrome Extension:** It helped bunch bidding process **90% faster**. Sometimes it makes the impossible task possible."
                     ]
                 },
                 {
-                    "title": "Labkafe | Full-stack developer",
-                    "subtitle": "(05/2021 - Present)",
-                    "skills": [
-                        "JavaScript",
-                        "React",
-                        "Vue",
-                        "PHP",
-                        "Python",
-                        "Figma",
-                        "Photoshop",
-                        "MySQL",
-                        "Flutter"
-                    ],
-                    "role": [
-                        "Designing, prototyping and preparing images [Figma, Adobe XD, Photoshop]",
-                        "Building, testing & maintaining front-end",
-                        "Developing Backend, Database in a 2-man team [PHP Laravel, Python, MySQL, phpmyadmin]",
-                        "Reduced bounce rate by 30%",
-                        "Reduced the manual efforts of operation team by 80% by making quotation generator and invoice generator [Frontend]",
-                        "Developed HRM portal. It is a leave management dashboard for employees and management. The software is connected to the attendance management, payroll and payslip system. [Full-stack]",
-                        "Improved company internal architecture by building portfolio generator [Full-stack], Human resource management system [Full-stack] etc.",
-                        "Developed a video player app for android [Flutter]",
-                        "A fun project: Built a chrome extension to make invoice uploading easier in GEM portal while bunch-biding. It helps bunch bidding process 50% easier."
+                    "title": "Goranggo",
+                    "title2": "Sr. Web Developer",
+                    "timeline": "April, 2024 - Current",
+                    "content": [
+                        "Creating and maintaining websites according to client requirements, converting Figma designs into webpage, cloning **pixel perfect websites** using: HTML, CSS, JS, PHP, React, Node, WordPress (Multiple builders)",
+                        "**Spearheaded client support/ticket operations.** This involves systematically triaging and assigning all incoming tickets to my team. I ensure timely and accurate resolution by monitoring team progress and handle final client correspondence.",
+                        "Self-Initiated Projects for Efficiency & Automation:",
+                        "- **Link Checker AppScript:** Automatic checking and testing website pages according to project guidelines and common standard or searching specific words throughout the website. This project reduces checking time from hours to seconds.",
+                        "- **A Browser Extension:** A browser extension making copy pasting content easily."
+                    ]
+                },
+                {
+                    "title": "Education",
+                    "title2": "University of Engineering & Management (Kolkata)",
+                    "timeline": "2017 - 2021",
+                    "content": [
+                        "B.Tech in Computer Science",
+                        "GPA: 8.64"
+                    ]
+                },
+                {
+                    "title": "Freelancing",
+                    "title2": "Freelance",
+                    "timeline": "∞",
+                    "content": [
+                        "I started my career as a full-stack developer in two close-knit groups: **Makscube** and **RandomBoyz**.",
+                        "Together, we built many web applications for local businesses and clients around the world.",
+                        "Over time, our team members moved to different cities to focus on their own lives and careers. Although we no longer work as a group, that experience shaped how I build today.",
+                        "I am now working independently and **accepting new, smaller-scale projects**.",
+                        "If you have a project in mind, **let’s connect** and build something great together."
                     ]
                 }
             ]
         },
-        "cv": {
-            "title": "Curriculum Vitae",
-            "desc": "Click To Expand Your Preferred Resume Template"
-        },
         "about": {
             "title": "About Me",
-            "desc": "Fast | Hardworking | Disciplined, But Beyond That..."
+            "desc1": "Fast,Hardworking,Disciplined",
+            "desc2": "But Beyond That...",
+            "title2": "Hobbies & Likings",
+            "title3": "My Diery",
+            "title4": "Thank You",
+            "diery": {
+                "intro": "**Who am I??**<br />Hello, thanks for visiting my webite. My name is Ayan, I am a software developer who loves bulilding and coding. Like many of my fellow engineers I don't know in what career I might end. Probably a football coach developing young legs and minds, a forest ranger petting big cats or planting trees like Saalumarada Thimmakka or Tulsi Gowda, or an engineer in an research institute; it could be anything. I want to keep having big roles and greater responsibilities.",
+                "chess": "I love playing chess, specially in the short breaks from works.",
+                "reading": "I always try to save time to read books and sometime to write a diary. It give me a fresh mind to complete all the task.",
+                "music": "I love listening to musics. From Kishore Kumar, Shreya Ghoshal to Shakira, Eminem I listen to all of them. I also love listening to bengali audio books.",
+                "tv": "I love watching sci-fi movies like Interstellar, Inception; superhero series like Spiderman, Batman, Avengers; Animes like One Piece, Naruto, Demon Slayer etc.",
+                "football": "I loveeee **Football**. I support Real Madrid. My favorate player is Cristiano Ronaldo. What do you think about my favorate 11 (my generation)? 🤔",
+                "sports": "I love watching cricket, favorate player 🤔? Definately Virat Kohli. I also love watching Tenis, Volleyball & F1",
+                "foodie": "I am a big foodie and I believe that food brings people together.",
+                "travel": "I love traveling. Probably I am a beach person but I also love trekking, bike riding, jungal safari etc. and exploring new places.",
+                "starglazing": "Whenever I visit my hometown, I love sitting or lieing in our roof at night and stare at the stars. I absolutely adore doing it, it gives me a different kind of relaxation. I started doing this when I was a kid but from covid times it became a hobby."
+            }
         },
         "contact": {
             "title": "CONTACT",
@@ -103,6 +130,7 @@
                     "Others"
                 ]
             },
+            "submit": "Send",
             "ending": "Don't like forms? Drop a quick HI @ my socials ~"
         },
         "footer": "Thank you for visiting, have a nice day"

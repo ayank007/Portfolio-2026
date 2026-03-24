@@ -3,7 +3,11 @@ import { useIsomorphicLayoutEffect } from "../../useIsomorphicLayoutEffect"
 import Heading2 from "../../utils/Heading2"
 import gsap from "gsap"
 import RoundedText from "../../utils/RoundedText"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faPaperPlane
+} from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faDiscord, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './style.scss'
 
 const Contact = ({ data }: any) => {
@@ -57,7 +61,7 @@ const Contact = ({ data }: any) => {
             reasonInpValues.push(reasonInps[i].value)
         }
 
-        const res = await fetch('https://ayankoley-bb6cc-default-rtdb.europe-west1.firebasedatabase.app/contactUs.json', {
+        const res = await fetch('https://send.pageclip.co/Ibv8B1PUyirUfegtKQXkrmhW8ibjzkkG/Contact-Form', {
             method: 'POST',
             headers: {
                 "content-type": "application/json",
@@ -69,6 +73,8 @@ const Contact = ({ data }: any) => {
                 message: msgInp.value,
             })
         })
+
+        console.log(res);
 
         if (res) {
             alert("Your submission is successfully stored")
@@ -94,12 +100,12 @@ const Contact = ({ data }: any) => {
                                     <div className="sliding-text__line">
                                         <span>&nbsp;</span>
                                         <span>
-                                            {data.heading2[0]}&nbsp;<i className="fa-solid fa-paper-plane"></i>
+                                            {data.heading2[0]}&nbsp;<FontAwesomeIcon icon={faPaperPlane} />
                                         </span>
                                     </div>
                                     <div className="sliding-text__line">
                                         <span>
-                                            {data.heading2[0]}&nbsp;<i className="fa-solid fa-paper-plane"></i>
+                                            {data.heading2[0]}&nbsp;<FontAwesomeIcon icon={faPaperPlane} />
                                         </span>
                                         <span>{data.heading2[1]}</span>
                                     </div>
@@ -159,11 +165,11 @@ const Contact = ({ data }: any) => {
                                 </div>
                                 <label>
                                     <p>{data.desc}</p>
-                                    <textarea name="message" required placeholder="Hi, how are you?"></textarea>
+                                    <textarea name="message" required placeholder="Hello Ayan 👋"></textarea>
                                 </label>
                                 <br /><br />
                                 <button className="submit px-10 py-2 rounded Link submitContactBtn" type="submit">
-                                    Send
+                                    {data.submit}
                                 </button>
                             </form>
                         </div>
@@ -172,10 +178,18 @@ const Contact = ({ data }: any) => {
                         {data.ending}
                     </p>
                     <div className="flex flex-wrap gap-4 sm:gap-6 justify-center pt-7 roundedTexts">
-                        <RoundedText brand='linkedin' link="https://www.linkedin.com/in/ayan-koley-3370a9190/" />
-                        <RoundedText brand='discord' link="https://discord.com/users/925418443371593738" />
-                        <RoundedText brand='instagram' link="https://www.instagram.com/_ayank007_/" />
-                        <RoundedText brand='github' link="https://github.com/ayank007" />
+                        <RoundedText brand='linkedin' link="https://www.linkedin.com/in/ayan-koley-3370a9190/">
+                            <FontAwesomeIcon icon={faLinkedinIn} />
+                        </RoundedText>
+                        <RoundedText brand='discord' link="https://discord.com/users/925418443371593738">
+                            <FontAwesomeIcon icon={faDiscord} />
+                        </RoundedText>
+                        <RoundedText brand='instagram' link="https://www.instagram.com/_ayank007_/">
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </RoundedText>
+                        <RoundedText brand='github' link="https://github.com/ayank007">
+                            <FontAwesomeIcon icon={faGithub} />
+                        </RoundedText>
                     </div>
                     <br /><br />
                 </div>

@@ -1,0 +1,562 @@
+$book-h-ratio: 7.5;
+$book-w-ratio: 5.5;
+$book-size: 60px;
+
+.book {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    // text-indent: 20px;
+    transform: translate(-50%, -50%);
+    width: $book-size * $book-w-ratio * 2;
+    height: $book-size * $book-h-ratio;
+    transform: translate(-50%, -50%) rotateX(10deg) rotateY(-10deg);
+    transform-style: preserve-3d;
+
+    font-size: 14px;
+    font-weight: 400;
+
+
+}
+
+.pageNum {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.page {
+    width: $book-size * $book-w-ratio;
+    height: $book-size * $book-h-ratio;
+    background: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: transform 1s;
+    cursor: grab;
+
+    >* {
+        pointer-events: none;
+    }
+}
+
+@for $i from 1 through 10 {
+    .page:nth-child(#{$i}) {
+        @if $i % 2==1 {
+            padding: 5% 4% 4% 5%;
+            transform-origin: 0% 50%;
+            transform: translateZ(-1px * $i);
+        }
+
+        @else {
+            padding: 5% 5% 4% 4%;
+            transform-origin: 100% 50%;
+            transform: translateZ(-1px * $i) scaleX(-1) translateX(100%);
+        }
+
+        @if $i >2 {
+            @if $i % 20 < 10 {
+                background: #f5f5f5;
+            }
+
+            @else {
+                background: #ccc;
+            }
+        }
+
+        @else {
+            background: #9bc8d6;
+        }
+    }
+
+    .left-side:nth-child(#{$i}) {
+        @if $i % 2==1 {
+            transform: translateZ(1px * $i) rotateY(-180deg);
+        }
+
+        @else {
+            transform: translateZ(1px * $i) scaleX(-1) translateX(100%) rotateY(180deg);
+        }
+    }
+}
+
+.cover-front {
+    text-align: center;
+    background:
+        linear-gradient(#afd2dd, #a1d5e5) 50% 50% / 80% 86% no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50% / 90% 93% no-repeat,
+        linear-gradient(#9bc8d6, #9bc8d6) no-repeat !important;
+
+    .heading {
+        font-size: 50px;
+        font-family: var(--thunder);
+        line-height: 1;
+        top: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-family: var(--pixel);
+        top: 30px;
+    }
+
+    .hat {
+        font-size: 100px;
+    }
+}
+
+.page:nth-child(3) {
+    p {
+        &:first-of-type {
+            &:first-letter {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+.bookPreview {
+    font-size: 8px;
+    margin: 0 auto;
+    width: 18.5em;
+    height: 23.0991em;
+    margin-top: -4.4em;
+    transform: perspective(60em) rotateX(58deg) rotateZ(-34deg) skewY(-7deg);
+    box-shadow: -1.4em 1.7em 0.3em -0.3em rgba(0, 0, 0, 0.8), -1.6em 1.8em 0.9em -0.2em rgba(0, 0, 0, 0.5), 0.3em 1.9em 1.3em rgba(0, 0, 0, 0.3);
+    border-top-right-radius: 0.4em;
+
+    img {
+        border-top-right-radius: 0.4em;
+        box-sizing: border-box;
+        width: 100%;
+        clip: rect(0em, 18.5em, 23.1em, 0em);
+        display: block;
+        position: absolute;
+        filter: saturate(90%);
+    }
+
+    &:before {
+        width: 105%;
+        height: 105%;
+        left: -5%;
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(115deg, transparent 2.8%, #3f3f3f 3%, #3f3f3f 16%, transparent 16%), linear-gradient(125deg, transparent 10%, #3f3f3f 10%, #3f3f3f 17%, #222 46.8%, transparent 47%), linear-gradient(125deg, transparent 46%, rgba(0, 0, 0, 0.5) 46.5%, rgba(0, 0, 0, 0.25) 49%, transparent 53%), linear-gradient(to right, #444, #666), linear-gradient(#444, #444), linear-gradient(140deg, transparent 45%, #eee 45%, #ccc 96.8%, rgba(170, 170, 170, 0) 97%);
+        background-size: 100% 100%, 100% 100%, 100% 100%, 100% 0.4em, 94% 0.2em, 100% 100%;
+        background-position: 0 0, 0 0, 0 0, 0 95.8%, 0 100%, 0 0;
+    }
+
+    &:after {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(to right, transparent 2%, rgba(0, 0, 0, 0.1) 3%, rgba(0, 0, 0, 0.1) 4%, transparent 5%), linear-gradient(-50deg, rgba(0, 0, 0, 0.1) 20%, transparent 100%), linear-gradient(-50deg, rgba(0, 0, 0, 0.2) 20%, transparent 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 20%, transparent 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 20%, transparent 100%);
+        background-size: 100% 100%, 2% 20%, 1% 20%, 2% 20%, 1% 20%;
+        background-position: 0 0, 2.2% 100%, 3% 100%, 2.2% 0, 3% 0;
+    }
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+    }
+}
+
+.chessPieces {
+    top: 50px;
+    --bounce: -30px;
+
+    svg {
+        animation-timing-function: ease-in;
+        width: 30px;
+        height: 30px;
+        margin: 0px 8px;
+    }
+
+    .fa-chess-rook {
+        animation: bounce 0.8s 0s infinite alternate;
+    }
+
+    .fa-chess-knight {
+        // transition-delay: 0.25s;
+        animation: bounce 0.8s 0.2s infinite alternate;
+    }
+
+    .fa-chess-bishop {
+        // transition-delay: 0.5s;
+        animation: bounce 0.8s 0.3s infinite alternate;
+    }
+
+    .fa-chess-pawn {
+        // transition-delay: 0.75s;
+        animation: bounce 0.8s 0.4s infinite alternate;
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0px)
+    }
+
+    100% {
+        transform: translateY(var(--bounce))
+    }
+}
+
+.music {
+    // position: absolute;
+    height: 420px;
+    width: 420px;
+    margin-top: 60px;
+    margin-left: 30px;
+    transform: scale(0.3);
+    transform-origin: top left;
+
+    .headphone {
+        position: absolute;
+        z-index: 10;
+        left: -79px;
+        top: -180px;
+        width: 110%;
+        max-width: 110%;
+    }
+
+    .loder {
+        flex-direction: row;
+        border: 1px solid rgba(0, 0, 0, 0.29);
+        border-radius: 50%;
+        height: 70%;
+        background-color: #eefbff;
+        width: 70%;
+        display: flex;
+        top: 0px;
+        align-items: center;
+        justify-content: center;
+
+        >div {
+            width: 30px;
+            height: 140px;
+            margin: 8px;
+            overflow: hidden;
+            border-radius: 40px;
+            background: linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.05));
+            border: 2px solid #edf1f4;
+            box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1),
+                -15px -15px 20px #fff,
+                inset -5px -5px 5px rgba(255, 255, 255, 0.05),
+                inset 5px 5px 5px rgba(0, 0, 0, 0.05);
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 10;
+                border-radius: 4px;
+                box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1),
+                    -15px -15px 20px #fff,
+                    inset -5px -5px 5px rgba(255, 255, 255, 0.05),
+                    inset 5px 5px 5px rgba(0, 0, 0, 0.05);
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 2px;
+                top: 0;
+                width: 36px;
+                height: 36px;
+                background-color: #fff;
+                border-radius: 50%;
+                box-shadow: inset -5px -5px 5px rgba(0, 0, 0, 0.2),
+                    0 420px 0 400px #2196f5;
+                animation: music 2.5s ease-in-out infinite;
+                animation-delay: calc(-0.5s * var(--i));
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+@keyframes music {
+    0% {
+        filter: hue-rotate(180deg);
+        transform: translateY(160px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    100% {
+        transform: translateY(160px);
+        filter: hue-rotate(0deg);
+    }
+}
+
+.footballBg {
+    position: relative;
+    float: right;
+    width: 150px;
+    height: 200px;
+    transform: scaleX(-1);
+
+    svg {
+        width: 150px;
+    }
+
+    #ball {
+        animation: ball 0.4s ease-out infinite alternate;
+    }
+
+    #left_leg {
+        transform: translateY(-10px);
+        animation: kick 0.4s ease-out infinite alternate;
+        transform-origin: top;
+    }
+
+    #left_hand,
+    #right_hand {
+        animation: movement 0.5s ease-in-out infinite alternate;
+    }
+
+    #short {
+        animation: short_movement 0.4s ease-out infinite alternate;
+    }
+}
+
+@keyframes ball {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-30%);
+    }
+}
+
+@keyframes kick {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(2.5deg);
+    }
+}
+
+@keyframes movement {
+    from {
+        transform: rotateZ(1deg);
+    }
+
+    to {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes short_movement {
+    from {
+        transform: rotateZ(0.5deg);
+    }
+
+    to {
+        transform: rotateZ(0deg);
+    }
+}
+
+.travel {
+    width: 300px;
+    height: 200px;
+    max-width: 100%;
+}
+
+.travel .imgbox {
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    animation: animebg 60s linear infinite;
+    transition: 0.5s ease-in-out;
+    border-radius: 6px;
+    height: 150px;
+}
+
+.travel .imgbox .img {
+    width: 100px;
+}
+
+.travel .imgbox .img img {
+    object-fit: cover;
+    width: 70px;
+    height: 30px;
+    position: absolute;
+    animation: plane 1s ease-in-out infinite alternate;
+}
+
+@keyframes animebg {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 1600px 0;
+    }
+}
+
+@keyframes plane {
+    from {
+        transform: translateY(5px);
+    }
+
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+.countingStars {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    z-index: 4;
+}
+
+.countingStars svg {
+    position: relative;
+    color: black;
+    width: 250px;
+    height: 200px;
+    position: absolute;
+}
+
+.countingStars svg path {
+    stroke-width: 1;
+    stroke: #000200;
+    fill: #000200;
+}
+
+.stars {
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 10px;
+    width: 160px;
+    left: 40px;
+    top: 20px;
+    height: 120px;
+    background-color: #000200;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.stars .star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation: stars 20s ease-in-out infinite;
+    background-position: center;
+    background-size: 200% !important;
+    background-repeat: no-repeat;
+}
+
+.star.star1 {
+    animation-delay: 0s;
+    background: url("../../assets/about/star1.png");
+}
+
+.star.star2 {
+    animation-delay: -1s;
+    background: url("../../assets/about/star2.png");
+}
+
+.star.star3 {
+    animation-delay: -2s;
+    background: url("../../assets/about/star3.png");
+}
+
+.star.star4 {
+    animation-delay: -3s;
+    background: url("../../assets/about/star4.png");
+}
+
+.star.star5 {
+    animation-delay: -4s;
+    background: url("../../assets/about/star5.png");
+}
+
+.star.star6 {
+    animation-delay: -5s;
+    background: url("../../assets/about/star6.png");
+}
+
+.star.star7 {
+    animation-delay: -6s;
+    background: url("../../assets/about/star7.png");
+}
+
+.star.star8 {
+    animation-delay: -7s;
+    background: url("../../assets/about/star8.png");
+}
+
+@keyframes stars {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        opacity: 0;
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        opacity: 1;
+    }
+}
+
+.telescope {
+    width: 90px;
+    height: auto;
+    position: absolute;
+    height: auto;
+    bottom: 20px;
+    left: 0;
+}
+
+
+@media (max-width: 1024px) {
+    .music {
+        transform: scale(1);
+        zoom: 0.3;
+        top: 120px;
+    }
+}
+
+@media (max-width: 500px) {
+    .chessPieces {
+        top: 20px;
+
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        --bounce: -10px;
+    }
+}

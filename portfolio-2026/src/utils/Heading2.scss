@@ -8,6 +8,7 @@
         // text-transform: capitalize;
         font-family: var(--thunder);
         pointer-events: none;
+        text-transform: capitalize;
     }
 
     p {
@@ -125,5 +126,31 @@
 
     to {
         transform: scaleX(1) translate(-50%, -50%);
+    }
+}
+
+@media screen and (width <=900px) {
+    .heading2 {
+        h2 {
+            font-size: 100px;
+            line-height: 1;
+            -webkit-text-fill-color: white;
+            -webkit-text-stroke: unset;
+            margin-top: 30px;
+        }
+
+        p {
+            position: inherit;
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+}
+
+@media screen and (width <=600px) {
+    .heading2 {
+        h2 {
+            font-size: 50px;
+        }
     }
 }

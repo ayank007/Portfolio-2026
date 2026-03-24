@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { Children, useRef } from 'react'
 import { useIsomorphicLayoutEffect } from "../useIsomorphicLayoutEffect"
 import gsap from "gsap"
 import SplitText from './SplitText'
@@ -47,7 +47,7 @@ const RoundedText = (props: any) => {
                     </SplitText>
                 </div>
                 <div className="icon">
-                    <i className={'fa-brands fa-' + brand}></i>
+                    {props.children}
                 </div>
             </a>
         </div>

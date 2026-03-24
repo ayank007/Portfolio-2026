@@ -106,7 +106,7 @@ $tail-interval: calc((11 - 7.5) / $tail-wags);
 @mixin effect($name, $kf) {
   @keyframes #{$name} {
     @each $interval, $transform in $kf {
-      #{percentage(calc($interval / $total-kf))} {
+      #{math.percentage(calc($interval / $total-kf))} {
         transform: $transform;
       }
     }
