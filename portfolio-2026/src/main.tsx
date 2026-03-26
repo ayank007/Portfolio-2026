@@ -6,10 +6,12 @@ import './index.css'
 import App from './App.tsx'
 import Home from './pages/Home.tsx'
 import Test from './pages/Test.tsx'
+import NotFound from './pages/NotFound.tsx'
 
 // 1. Root Layout
 const rootRoute = createRootRoute({
   component: App,
+  notFoundComponent: NotFound,
 })
 
 // 2. Home Route (Injected into App's Outlet)

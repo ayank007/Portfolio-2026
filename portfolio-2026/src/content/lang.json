@@ -12,8 +12,31 @@
             ]
         },
         "projects": {
-            "title": "PROJECTS",
-            "title2": "Some of my works",
+            "title": "Check Out Some of My <span>Personal Projects</span> I Have Worked On",
+            "skills": [
+                "JavaScript",
+                "React!",
+                "Tailwind",
+                "Java",
+                "Python",
+                "Node!",
+                "Next!",
+                "MySQL",
+                "GSAP",
+                "MongoDB",
+                "SASS",
+                "React Native",
+                "Express",
+                "PHP",
+                "MERN",
+                "GIT",
+                "Redis",
+                "JQuery",
+                "Springboot",
+                "Hibernate",
+                "API",
+                "AI"
+            ],
             "project1": {
                 "title": "Resume & Portfolio",
                 "desc": "Figma, React + GSAP ~ a cool stack"

@@ -3,6 +3,7 @@ import ayan from "../../assets/img-ayan-1.webp";
 import "./style.scss";
 import Diery from './Diery';
 import MobileDiery from './MobileDiery';
+import Profile from './Profile';
 
 export default function About({ data }: any) {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,7 +25,8 @@ export default function About({ data }: any) {
 
         {/* LEFT SECTION: PURPLE CARD */}
         <div className="z-20 w-full md:w-[450px] shrink-0 bg-[#8e66ff] rounded-[50px] xl:aspect-4/5 p-12 flex flex-col justify-between items-center relative shadow-2xl">
-          <img src={ayan} alt="" width="100%" />
+          {/* <img src={ayan} alt="" width="100%" /> */}
+          <Profile />
         </div>
 
         {/* RIGHT SECTION: PILL SHAPE */}

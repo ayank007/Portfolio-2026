@@ -5,9 +5,11 @@ import { useLenis } from 'lenis/react';
 import MarqueeCursor from '../../utils/MarqueeCursor';
 import PhysicsHero from "../../utils/Skillls2"
 
+import "./style.scss"
+
 gsap.registerPlugin(ScrollTrigger);
 
-const Projects = () => {
+const Projects = ({ data }: any) => {
 
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -94,7 +96,7 @@ const Projects = () => {
 
     return (
         <div ref={containerRef} id='Projects' className="z-10 py-40 mt-[200px] opacity-0">
-            <h2 id="projects-heading" className='h2 max-w-[800px] text-center mx-auto'>Checkout Some of My <span className='highlighted-orange'>Works/Projects</span></h2>
+            <h2 id="projects-heading" className='max-w-[800px] text-center mx-auto projects-heading text-5xl sm:text-6xl md:text-7xl font-black text-black thunder lg:text-[90px]' dangerouslySetInnerHTML={{ __html: data.title }} />
             <MarqueeCursor text={cursorText} />
             <div id="projects-content" className="mt-8 grid grid-cols-[repeat(2,1fr)] lg:grid-cols-4 gap-3 md:gap-10 px-4 xl:px-32 container mx-auto items-start z-10">
 
@@ -151,7 +153,7 @@ const Projects = () => {
                 </div>
             </div>
             <div className='absolute w-full bottom-0'>
-                <PhysicsHero />
+                <PhysicsHero data={data.skills} />
             </div>
         </div>
     )

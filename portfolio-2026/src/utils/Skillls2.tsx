@@ -17,7 +17,7 @@ interface TextBody extends Body {
     textColor?: string;
 }
 
-const PhysicsTags: React.FC = () => {
+const PhysicsTags: React.FC = ({ data }: any) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const spawnedRef = useRef(false);
@@ -50,22 +50,25 @@ const PhysicsTags: React.FC = () => {
         const rightWall = Bodies.rectangle(width + 25, height / 2, 50, height, wallOptions);
         Composite.add(engine.world, [ground, leftWall, rightWall]);
 
-        const tagData = [
-            { t: 'JavaScript', c: '#f3f4f6' }, { t: 'React!', c: '#e9d5ff' },
-            { t: 'Tailwind', c: '#ffedd5' }, { t: 'Java', c: '#fef3c7' },
-            { t: 'Python', c: '#ccfbf1' }, { t: 'Node!', c: '#a855f7', tc: '#fff' },
-            { t: 'Next!', c: '#fef9c3' }, { t: 'MySQL', c: '#bbf7d0' },
-            { t: 'GSAP', c: '#ffedd5' }, { t: 'MongoDB', c: '#bfdbfe' },
-            { t: 'SASS', c: '#ccfbf1' }, { t: 'React Native', c: '#a855f7', tc: '#fff' },
-            { t: 'Express', c: '#fef9c3' }, { t: 'PHP', c: '#bbf7d0' },
-            { t: 'MERN', c: '#ffedd5' }, { t: 'GIT', c: '#bfdbfe' },
-            { t: 'Redis', c: '#f3f4f6' }, { t: 'JQuery', c: '#e9d5ff' }
+        const colors = [
+            { c: '#f3f4f6' }, { c: '#e9d5ff' }, { c: '#ffedd5' },
+            { c: '#fef3c7' }, { c: '#ccfbf1' }, { c: '#a855f7', tc: '#fff' },
+            { c: '#fef9c3' }, { c: '#bbf7d0' }, { c: '#bfdbfe' }
         ];
+
+        const tagData = data.map((skill: string, index: number) => {
+            const color = colors[index % colors.length];
+            return {
+                t: skill,
+                c: color.c,
+                tc: color.tc || '#1f2937' // Default dark text if tc is missing
+            };
+        });
 
         const dropTags = () => {
             if (spawnedRef.current) return;
             spawnedRef.current = true;
-            tagData.forEach((tag, i) => {
+            tagData.forEach((tag: any, i: number) => {
                 const x = Math.random() * (width - 200) + 100;
                 const y = -100 - (i * 150);
                 const body = Bodies.rectangle(x, y, tag.t.length * 10 + 40, 45, {

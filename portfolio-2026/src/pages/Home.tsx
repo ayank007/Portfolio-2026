@@ -15,7 +15,7 @@ const Home = () => {
         <>
             <ScrollReveal />
             <Hero data={data.hero} />
-            <Projects />
+            <Projects data={data.projects} />
             <Experience data={data.career} />
             <ArcSlider data={data.about} />
             <About data={data.about} />

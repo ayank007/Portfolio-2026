@@ -117,7 +117,7 @@ const ArcSlider: React.FC = ({ data }: any) => {
                     </div>
                 ))}
             </div>
-            <h3 className='absolute left-1/2 -translate-x-1/2 bottom-4 sm:bottom-10 text-[44px] sm:text-6xl md:text-[80px] font-black text-[#a855f7] z-20 flex justify-center items-center flex-col gap-0 tracking-tight leading-[0.9] w-full text-center'>
+            <h3 className='absolute thunder left-1/2 -translate-x-1/2 bottom-4 sm:bottom-10 text-[55px] sm:text-7xl md:text-[90px] font-black text-[#a855f7] z-20 flex justify-center items-center flex-col gap-0 tracking leading-[0.9] w-full text-center'>
                 <WordSlider data={data.desc1} />
                 <span className='text-[#181818]'>{data.desc2}</span>
             </h3>

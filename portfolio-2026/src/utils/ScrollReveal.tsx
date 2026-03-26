@@ -21,8 +21,19 @@ const ScrollReveal = () => {
                     trigger: "body",
                     start: "top top",
                     // ULTRA SPEED: Reveal finishes after scrolling only 1/2 of the screen height
-                    end: "10% top",
+                    end: "8% top",
                     scrub: 0.1, // Lower number = more responsive to scroll
+                    invalidateOnRefresh: true,
+                }
+            });
+
+            gsap.to([triggerRef.current, ".main-arrow"], {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "10% top",
+                    scrub: 0.1,
                     invalidateOnRefresh: true,
                 }
             });
@@ -57,7 +68,7 @@ const ScrollReveal = () => {
                 }
             });
             gsap.to([triggerRef.current, "#projects-heading"], {
-                y: -400,
+                y: -200,
                 scrollTrigger: {
                     trigger: "body",
                     start: "top top",
@@ -82,7 +93,7 @@ const ScrollReveal = () => {
                     cx="50%"
                     cy="calc(100% - 60px)"
                     r="35"
-                    fill="#fff"
+                    fill="#fff9f2"
                     className="will-change-[attr]"
                 />
             </svg>
@@ -90,7 +101,7 @@ const ScrollReveal = () => {
             <div
                 ref={triggerRef}
                 onClick={handleScroll}
-                className="absolute bottom-[15px] left-1/2 -translate-x-1/2 w-[80px] h-[80px] flex items-center justify-center pointer-events-auto cursor-pointer z-10"
+                className="absolute bottom-[15px] left-1/2 -translate-x-1/2 w-[80px] h-[80px] flex items-center justify-center pointer-events-auto cursor-pointer z-10 main-arrow"
             >
                 <div className="relative h-8 w-6 overflow-hidden">
                     <svg ref={arrowRef} className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
