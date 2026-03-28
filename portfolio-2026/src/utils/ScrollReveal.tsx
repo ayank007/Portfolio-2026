@@ -27,19 +27,8 @@ const ScrollReveal = () => {
                 }
             });
 
-            gsap.to([triggerRef.current, ".main-arrow"], {
-                opacity: 0,
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top top",
-                    end: "10% top",
-                    scrub: 0.1,
-                    invalidateOnRefresh: true,
-                }
-            });
-
             // 2. Hide Hero UI and Button instantly
-            gsap.to([triggerRef.current, "#Header"], {
+            gsap.to("#Header", {
                 opacity: 0,
                 scrollTrigger: {
                     trigger: "body",
@@ -48,8 +37,18 @@ const ScrollReveal = () => {
                     scrub: true,
                 }
             });
+            gsap.to(triggerRef.current, {
+                opacity: 0,
+                pointerEvents: "none",
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top top",
+                    end: "50px top", // Very short distance
+                    scrub: true,
+                }
+            });
 
-            gsap.to([triggerRef.current, "#Projects"], {
+            gsap.to("#Projects", {
                 opacity: 1,
                 scrollTrigger: {
                     trigger: "body",
@@ -58,16 +57,7 @@ const ScrollReveal = () => {
                     scrub: true,
                 }
             });
-            gsap.to([triggerRef.current, "#projects-content"], {
-                y: -200,
-                scrollTrigger: {
-                    trigger: "body",
-                    start: "top top",
-                    end: "20% top",
-                    scrub: true,
-                }
-            });
-            gsap.to([triggerRef.current, "#projects-heading"], {
+            gsap.to(["#projects-heading", "#projects-content"], {
                 y: -200,
                 scrollTrigger: {
                     trigger: "body",

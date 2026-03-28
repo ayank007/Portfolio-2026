@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import {
     Engine,
     Render,
@@ -17,7 +17,7 @@ interface TextBody extends Body {
     textColor?: string;
 }
 
-const PhysicsTags: React.FC = ({ data }: any) => {
+const PhysicsTags = ({ data }: { data: any }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const spawnedRef = useRef(false);

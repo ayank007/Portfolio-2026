@@ -1,0 +1,155 @@
+#Work {
+    .Link {
+        cursor: pointer;
+
+        >* {
+            pointer-events: none;
+        }
+    }
+}
+
+.project {
+    color: #181818;
+    width: 100%;
+    height: auto;
+
+    .view {
+        border-radius: 5px;
+        overflow: hidden;
+        min-height: 400px;
+    }
+
+    .texts {
+        padding: 10px 0;
+
+        h3 {
+            font-size: var(--fxl);
+            font-weight: bold;
+        }
+
+        p {
+            text-transform: capitalize;
+            font-size: 14px;
+        }
+
+        border-bottom: 1px solid;
+    }
+}
+
+.project1 {
+    .view {
+        background-color: #a855f7;
+        color: white;
+    }
+
+    .texts {
+        border-color: #a855f7;
+    }
+}
+
+.project2 {
+    .view {
+        background-color: #005461;
+    }
+
+    .texts {
+        border-color: #005461;
+    }
+}
+
+.project3 {
+    .view {
+        background-color: var(--project3);
+    }
+
+    .texts {
+        border-color: var(--project3);
+    }
+}
+
+.project4 {
+    .view {
+        background-color: var(--project4);
+    }
+
+    .texts {
+        border-color: var(--project4);
+    }
+}
+
+.wormHoleBtn {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    font-size: 100px;
+    background-color: var(--about);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    svg {
+        width: 85px;
+        transform: rotate(135deg);
+        transform-origin: center center;
+        pointer-events: none;
+    }
+
+    .wormHoleBtnText {
+        width: 101%;
+        height: 101%;
+        z-index: 2;
+        -webkit-clip-path: circle(0 at center);
+        clip-path: circle(0 at center);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+        text-align: center;
+        border-radius: 50%;
+        line-height: 1;
+        background-color: var(--about);
+        color: var(--theme);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        transition: .4s;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            transition: 0.3s;
+            transition-delay: 0.4s;
+            font-weight: 700;
+        }
+    }
+
+    &:hover {
+        .wormHoleBtnText {
+            -webkit-clip-path: circle(90px at center);
+            clip-path: circle(90px at center);
+
+            p {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+
+.spreader {
+    width: 30px;
+    height: 30px;
+    background-color: var(--about);
+    // background-color: red;
+    border-radius: 50%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+}

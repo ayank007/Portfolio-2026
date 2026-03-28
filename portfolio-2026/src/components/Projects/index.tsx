@@ -3,9 +3,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenis } from 'lenis/react';
 import MarqueeCursor from '../../utils/MarqueeCursor';
-import PhysicsHero from "../../utils/Skillls2"
+import PhysicsTags from "../../utils/Skillls2"
 
 import "./style.scss"
+import "./Cards/style.scss"
+import ProjectCard1 from './Cards/ProjectCard1';
+import ProjectCard2 from './Cards/ProjectCard2';
+import ProjectCard3 from './Cards/ProjectCard3';
+import ProjectCard4 from './Cards/ProjectCard4';
+import ProjectCard5 from './Cards/ProjectCard5';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,42 +101,42 @@ const Projects = ({ data }: any) => {
 
 
     return (
-        <div ref={containerRef} id='Projects' className="z-10 py-40 mt-[200px] opacity-0">
+        <div ref={containerRef} id='Projects' className="z-10 py-40 mt-[200px] opacity-1">
             <h2 id="projects-heading" className='max-w-[800px] text-center mx-auto projects-heading text-5xl sm:text-6xl md:text-7xl font-black text-black thunder lg:text-[90px]' dangerouslySetInnerHTML={{ __html: data.title }} />
             <MarqueeCursor text={cursorText} />
             <div id="projects-content" className="mt-8 grid grid-cols-[repeat(2,1fr)] lg:grid-cols-4 gap-3 md:gap-10 px-4 xl:px-32 container mx-auto items-start z-10">
 
                 <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card z-20"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 1")}
+                        onMouseEnter={() => handleMouseEnter(data.project1.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?1" />
+                        <ProjectCard1 data={data.project1} />
                     </div>
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 2")}
+                        onMouseEnter={() => handleMouseEnter(data.project2.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?2" />
-                    </div>
-                </div>
-
-                <div className="column flex flex-col gap-3 md:gap-10 z-20">
-                    <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 3")}
-                        onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?3" />
-                    </div>
-                    <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 4")}
-                        onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?4" />
+                        <ProjectCard2 data={data.project2} />
                     </div>
                 </div>
 
                 <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 5")}
+                        onMouseEnter={() => handleMouseEnter(data.project3.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?5" />
+                        <ProjectCard3 data={data.project3} />
+                    </div>
+                    <div className="card"
+                        onMouseEnter={() => handleMouseEnter(data.project4.title)}
+                        onMouseLeave={handleMouseLeave}>
+                        <ProjectCard4 data={data.project4} />
+                    </div>
+                </div>
+
+                <div className="column flex flex-col gap-3 md:gap-10 z-20">
+                    <div className="card"
+                        onMouseEnter={() => handleMouseEnter(data.project5.title)}
+                        onMouseLeave={handleMouseLeave}>
+                        <ProjectCard5 data={data.project5} />
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter("PROJECT 6")}
@@ -153,7 +159,7 @@ const Projects = ({ data }: any) => {
                 </div>
             </div>
             <div className='absolute w-full bottom-0'>
-                <PhysicsHero data={data.skills} />
+                <PhysicsTags data={data.skills} />
             </div>
         </div>
     )

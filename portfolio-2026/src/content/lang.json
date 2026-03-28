@@ -39,22 +39,36 @@
             ],
             "project1": {
                 "title": "Resume & Portfolio",
-                "desc": "Figma, React + GSAP ~ a cool stack"
+                "desc": "React, Tailwind & GSAP ~ My fav stack 😎❤️"
             },
             "project2": {
-                "title": "Some Freelance works",
-                "desc": "As A Fontend Developer"
+                "title": "Freelancing",
+                "desc": "Checkout some of my freelancing projects I have worked on."
             },
             "project3": {
-                "title": "few fun projects",
-                "desc": "Which Are Very Useful"
+                "title": "Office Fun Projects",
+                "desc": "Some office projcts I self initiated and developed that became useful for the company"
             },
             "project4": {
-                "title": "bankbuddy",
-                "desc": "College Final Project ~ Banking Help As Chatbot/Voicebot [JS + ML]"
+                "title": "Bankbuddy",
+                "desc": "My final college project ~ Banking help as Chatbot/Voicebot [JS + ML]"
             },
-            "ending": "WORMHOLE",
-            "ending2": "Voyage to next section"
+            "project5": {
+                "title": "Travmaks",
+                "desc": "A Travelling & Tour Management Web App"
+            },
+            "project6": {
+                "title": "Work Ally",
+                "desc": "A webapp consisting multiple frontend tools. My everyday tool for work."
+            },
+            "project7": {
+                "title": "Reel Bhejo",
+                "desc": "A mobile app where we can share reels and save it for later."
+            },
+            "project8": {
+                "title": "FutNote",
+                "desc": "A app making after office football session easy. Working on it."
+            }
         },
         "career": {
             "title": "EXPERIENCE",

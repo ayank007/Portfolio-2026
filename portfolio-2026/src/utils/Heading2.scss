@@ -9,6 +9,7 @@
         font-family: var(--thunder);
         pointer-events: none;
         text-transform: capitalize;
+        line-height: 1;
     }
 
     p {
@@ -48,6 +49,20 @@
                 background-size: 200%;
                 animation: background-pan 10s linear infinite;
                 pointer-events: none;
+            }
+        }
+    }
+
+    &[data-theme="light"] {
+        h2 {
+            -webkit-text-stroke: 1px rgba($color: #000000, $alpha: 0.4);
+        }
+
+        p {
+            span {
+                span {
+                    background: #a855f7;
+                }
             }
         }
     }
@@ -139,6 +154,10 @@
             margin-top: 30px;
         }
 
+        &[data-theme="light"] h2 {
+            -webkit-text-fill-color: #181818;
+        }
+
         p {
             position: inherit;
             text-align: center;
@@ -151,6 +170,10 @@
     .heading2 {
         h2 {
             font-size: 50px;
+        }
+
+        p {
+            font-size: 24px;
         }
     }
 }

@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useLenis } from 'lenis/react';
 import WordSlider from '../../utils/WordSlider';
+import Heading2 from '../../utils/Heading2';
 
 interface SliderConfig {
     cardCount: number;
@@ -100,6 +101,7 @@ const ArcSlider: React.FC = ({ data }: any) => {
     return (
         <div
             className="relative w-full overflow-hidden bg-[#FFEDD5] z-10">
+            <div className='mt-4 -mb-10'><Heading2 title="About" theme="light">My Travel Stories</Heading2></div>
             <div
                 ref={containerRef} className='relative w-full overflow-hidden z-10'
             >

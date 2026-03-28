@@ -1,3 +1,15 @@
+#Projects {
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff9f2;
+    }
+}
+
 #projects-heading span {
     color: #a855f7;
     font-style: italic;

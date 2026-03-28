@@ -24,7 +24,7 @@ export default function About({ data }: any) {
       <div className="w-full max-w-[1600px] flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-y-8 gap-0">
 
         {/* LEFT SECTION: PURPLE CARD */}
-        <div className="z-20 w-full md:w-[450px] shrink-0 bg-[#8e66ff] rounded-[50px] xl:aspect-4/5 p-12 flex flex-col justify-between items-center relative shadow-2xl">
+        <div className="z-20 max-w-full w-[450px] shrink-0 bg-[#8e66ff] rounded-[50px] xl:aspect-4/5 flex flex-col justify-between items-center relative shadow-2xl">
           {/* <img src={ayan} alt="" width="100%" /> */}
           <Profile />
         </div>

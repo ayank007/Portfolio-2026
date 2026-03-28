@@ -32,7 +32,7 @@ const Heading2 = (props: any) => {
         }
     }, [lang])
     return (
-        <div className="heading2">
+        <div className="heading2" data-theme={props.theme || "dark"}>
             <h2>
                 {props.children}
             </h2>

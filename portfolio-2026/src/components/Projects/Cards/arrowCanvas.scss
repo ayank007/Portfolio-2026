@@ -1,0 +1,12 @@
+#ArrowCanvas{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding: 20px;
+    font-size: 14px;
+    > div {
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}

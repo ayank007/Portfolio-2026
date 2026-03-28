@@ -88,9 +88,8 @@ const Contact = ({ data }: any) => {
 
     return (
         <section id="Contact" className="min-sh bg-gray-950 z-10">
-            <div className="footerContainer bg-theme">
+            <div className="footerContainer bg-theme py-12 lg:py-16">
                 <div className="px-base max-w-[1300px] mx-auto">
-                    <br /><br />
                     <Heading2 title={data.title}>{data.title2}</Heading2>
                     <br /><br />
                     <div className="flex flex-col xl:flex-row">
@@ -191,7 +190,6 @@ const Contact = ({ data }: any) => {
                             <FontAwesomeIcon icon={faGithub} />
                         </RoundedText>
                     </div>
-                    <br /><br />
                 </div>
             </div>
         </section>
