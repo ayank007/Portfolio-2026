@@ -12,6 +12,9 @@ import ProjectCard2 from './Cards/ProjectCard2';
 import ProjectCard3 from './Cards/ProjectCard3';
 import ProjectCard4 from './Cards/ProjectCard4';
 import ProjectCard5 from './Cards/ProjectCard5';
+import ProjectCard6 from './Cards/ProjectCard6';
+import ProjectCard7 from './Cards/ProjectCard7';
+import ProjectCard8 from './Cards/ProjectCard8';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,10 +115,11 @@ const Projects = ({ data }: any) => {
                         onMouseLeave={handleMouseLeave}>
                         <ProjectCard1 data={data.project1} />
                     </div>
+
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter(data.project2.title)}
+                        onMouseEnter={() => handleMouseEnter(data.project6.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard2 data={data.project2} />
+                        <ProjectCard6 data={data.project6} />
                     </div>
                 </div>
 
@@ -139,22 +143,22 @@ const Projects = ({ data }: any) => {
                         <ProjectCard5 data={data.project5} />
                     </div>
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 6")}
+                        onMouseEnter={() => handleMouseEnter(data.project2.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?6" />
+                        <ProjectCard2 data={data.project2} />
                     </div>
                 </div>
 
                 <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter("PROJECT 7")}
+                        onMouseEnter={() => handleMouseEnter(data.project7.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?7" />
+                        <ProjectCard7 data={data.project7} />
                     </div>
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter(null)}
+                        onMouseEnter={() => handleMouseEnter(data.project8.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <img src="https://picsum.photos/600/900?8" />
+                        <ProjectCard8 data={data.project8} />
                     </div>
                 </div>
             </div>

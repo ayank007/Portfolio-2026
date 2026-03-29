@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/all';
 import BubbleButton from '../../utils/BubbleButton';
@@ -17,7 +17,7 @@ interface CardData {
     text: string;
 }
 
-const Experiences: React.FC = ({ data }: any) => {
+const Experiences = ({ data }: any) => {
     const sliderAreaRef = useRef<HTMLDivElement>(null);
     const cursorRef = useRef<HTMLDivElement>(null);
     const cardsElementsRef = useRef<(HTMLDivElement | null)[]>([]);

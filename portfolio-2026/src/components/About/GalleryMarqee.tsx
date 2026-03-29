@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useLenis } from 'lenis/react';
 import WordSlider from '../../utils/WordSlider';
@@ -16,7 +16,7 @@ interface SliderConfig {
     totalAngle: number;
 }
 
-const ArcSlider: React.FC = ({ data }: any) => {
+const ArcSlider = ({ data }: any) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 

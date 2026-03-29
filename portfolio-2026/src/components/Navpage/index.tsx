@@ -1,172 +1,135 @@
-import {useRef} from 'react'
+import { useRef } from 'react'
 import gsap from "gsap"
 import { useIsomorphicLayoutEffect } from "../../useIsomorphicLayoutEffect"
 
 import './style.scss'
-import { TagCloud, TagCloudOptions } from "@frank-mayer/react-tag-cloud"
 import RollingText from '../../utils/RollingText'
 
 import { NavpageToggler } from '../../context/openNavpage'
 import Link2 from '../../utils/CustomLinks/Link2'
+import Sphere from './TagCloud'
+import MagneticElement from '../../utils/magneticElement'
 
 function Navpage() {
-    const { navpageStatus }:any = NavpageToggler()
-    const menu:any = useRef()
+    const { navpageStatus }: any = NavpageToggler()
+    const containerRef = useRef<HTMLDivElement>(null)
 
-    useIsomorphicLayoutEffect(()=>{
-        let menuTL = gsap.timeline().set(".menu ul", {
-            autoAlpha: 1,
-        })
 
-        const menuItems = menu.current.querySelectorAll('li')
-        menuItems.forEach((item:any) => {
-            const imgWrapper = item.querySelector('.imgWrapper')
-            const imgWrapperBounds = imgWrapper.getBoundingClientRect()
-            const itemBounds = item.getBoundingClientRect()
+    useIsomorphicLayoutEffect(() => {
+        // Create a GSAP Context to handle all scoped animations and cleanups
+        let ctx = gsap.context(() => {
+            const follower = document.querySelector('.cursor-follower');
+            const workItems = document.querySelectorAll('.work-item');
+            const workList = document.querySelector('.work-list');
+            const hoverBg = document.querySelector('.hover-reveal-bg');
+            const images = document.querySelectorAll('.cursor-follower img');
+            let activeImage: HTMLElement | null = null;
 
-            const mouseEnter = () => {
-                gsap.set(imgWrapper, {
-                    scale: 0.8,
-                    xPercent: 25,
-                    yPercent: 50,
-                    opacity: 0,
-                    rotation: -15,
-                })
-                gsap.to(imgWrapper, {
-                    opacity: 1,
-                    scale: 1,
-                    xPercent: 0,
-                    yPercent: 0,
-                    rotation: 0,
-                })
-            }
+            // Initialize images
+            gsap.set(images, { yPercent: 101 });
 
-            const mouseLeave = () => {
-                gsap.to(imgWrapper, {
-                    opacity: 0,
-                    scale: 0.8,
-                    xPercent: 25,
-                    yPercent: 50,
-                    rotation: -15,
-                })
-            }
-            const mouseMove = ({x, y}:any) => {
-                let yOffset = itemBounds.top / imgWrapperBounds.height
-                yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset)
-                
-                gsap.to(imgWrapper, {
-                    duration: 1.25,
-                    x: Math.abs(x - itemBounds.left) - imgWrapperBounds.width / 1.55,
-                    y: Math.abs(y - itemBounds.top) - 420 + yOffset / 1.1,
-                    // y: Math.abs(y - itemBounds.top) - imgWrapperBounds.height / 3 - yOffset,
-                })
-            }
+            // QuickTo is great for mouse followers
+            const xTo = gsap.quickTo(follower, "x", { duration: 0.5, ease: "power3" });
+            const yTo = gsap.quickTo(follower, "y", { duration: 0.5, ease: "power3" });
 
-            item.addEventListener('mouseenter', mouseEnter)
-            item.addEventListener('mouseleave', mouseLeave)
-            item.addEventListener('mousemove', mouseMove)
-        })
-    }, [])
+            const onMouseMove = (e: MouseEvent) => {
+                xTo(e.clientX);
+                yTo(e.clientY);
+            };
+
+            window.addEventListener("mousemove", onMouseMove);
+
+            workItems.forEach((item: any) => {
+                const handleMouseEnter = () => {
+                    const imgId = item.getAttribute('data-img');
+                    const nextImg = document.getElementById(imgId);
+
+                    // Reveal background pill
+                    gsap.to(hoverBg, {
+                        top: item.offsetTop,
+                        height: item.offsetHeight,
+                        opacity: 1,
+                        duration: 0.4,
+                        ease: "power2.out"
+                    });
+
+                    // Reveal image follower
+                    gsap.to(follower, { autoAlpha: 1, scale: 1, duration: 0.3 });
+
+                    if (nextImg && activeImage !== nextImg) {
+                        gsap.fromTo(nextImg,
+                            { yPercent: 101, zIndex: 2 },
+                            { yPercent: 0, duration: 0.4, ease: "power2.out" }
+                        );
+                        if (activeImage) {
+                            gsap.to(activeImage, { yPercent: -101, zIndex: 1, duration: 0.4, ease: "power2.out" });
+                        }
+                        activeImage = nextImg;
+                    }
+                };
+
+                item.addEventListener('mouseenter', handleMouseEnter);
+            });
+
+            const handleMouseLeave = () => {
+                gsap.to(hoverBg, { opacity: 0, duration: 0.3 });
+                gsap.to(follower, { autoAlpha: 0, scale: 0.8, duration: 0.3 });
+            };
+
+            workList?.addEventListener('mouseleave', handleMouseLeave);
+
+        }, containerRef); // Scope everything to this component
+
+        return () => ctx.revert(); // Cleanup EVERYTHING (listeners, animations) on unmount
+    }, []);
 
     return (
-        <section id='Navpage' className={navpageStatus ? 'active' : ''}>
-            <div className="menu w-1/2 flex1" ref={menu}>
-                <ul>
-                    <li>
-                        <div className='imgWrapper'>
-                            <div className="imgBg">
-                                <img src="/projects/portfolio.png" alt="" />
-                            </div>
-                        </div>
+        <section id='Navpage' ref={containerRef} className={navpageStatus ? 'active' : ''}>
+            <div className="cursor-follower">
+                <img id="img-1" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" alt="" />
+                <img id="img-2" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="" />
+                <img id="img-3" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1574169208507-84376194878b?q=80&w=1000&auto=format&fit=crop" alt="" />
+                <img id="img-4" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" alt="" />
+            </div>
+            <div className="menu w-1/2 flex1 flex-col">
+                <ul className='work-list'>
+                    <div className="hover-reveal-bg"></div>
+                    <li className='work-item' data-img="img-1">
                         <Link2 to={'Home'}>
                             <span>01.</span>
                             <RollingText title="Home" />
                         </Link2>
                     </li>
-                    <li>
-                        <div className='imgWrapper'>
-                            <div className="imgBg">
-                                <img src="./skillsandexperience.png" alt="" />
-                            </div>
-                        </div>
-                        <Link2 to={'#SkillsAndExperience'}>
-                            <span>02.</span> 
+                    <li className='work-item' data-img="img-4">
+                        <Link2 to={'#Projects'}>
+                            <span>02.</span>
+                            <RollingText title="Projects" />
+                        </Link2>
+                    </li>
+                    <li className='work-item' data-img="img-2">
+                        <Link2 to={'#Experience'}>
+                            <span>03.</span>
                             <RollingText title="Skills &nbsp; &&nbsp;  Experience" />
                         </Link2>
                     </li>
-                    <li>
-                        <div className='imgWrapper'>
-                            <div className="imgBg">
-                                <img src="./about.png" alt="" />
-                            </div>
-                        </div>
+                    <li className='work-item' data-img="img-3">
                         <Link2 to={"#About"}>
-                            <span>03.</span> 
+                            <span>04.</span>
                             <RollingText title="About&nbsp;  Me" />
                         </Link2>
                     </li>
-                    <li>
-                        <div className='imgWrapper'>
-                            <div className="imgBg">
-                                <img src="./cv.png" alt="" />
-                            </div>
-                        </div>
-                        <Link2 to={"#CV"}>
-                            <span>04.</span> 
-                            <RollingText title="Download&nbsp;  CV" />
-                        </Link2>
-                    </li>
-                    <li>
-                        <div className='imgWrapper'>
-                            <div className="imgBg">
-                                <img src="./contact.png" alt="" />
-                            </div>
-                        </div>
-                        <Link2 to={"#Contact"}>
-                            <span>05.</span> 
-                            <RollingText title="Contact" />
-                        </Link2>
-                    </li>
                 </ul>
+                <div className='mt-10 mb-14'>
+                    <MagneticElement>
+                        <Link2 to="#Contact">
+                            <div className='bg-white text-[#181818] px-10 py-3 font-semibold text-xl rounded-full'>Let's Connect</div>
+                        </Link2>
+                    </MagneticElement>
+                </div>
             </div>
             <div className="skills w-1/2 flex1">
                 <div className="filter"></div>
-                <TagCloud
-                    options={(w: Window & typeof globalThis): TagCloudOptions => ({
-                        radius: 200,
-                        maxSpeed: "fast",
-                    })}
-                >
-                    {[
-                        "SASS",
-                        "TypeScript",
-                        "React",
-                        "Vue",
-                        "Vite",
-                        "PHP",
-                        "Next",
-                        "Redux",
-                        "JQuery",
-                        "C",
-                        "REST",
-                        "Lighthouse",
-                        "Svelte",
-                        "GIT",
-                        "JavaScript",
-                        "Photoshop",
-                        "Python",
-                        "GSAP",
-                        "Figma",
-                        "Svelte",
-                        "Excel",
-                        "SEO",
-                        "Tailwind",
-                        "XD",
-                        "SQL",
-                        "Powerpoint",
-                        "Flutter",
-                    ]}
-                </TagCloud>
+                <Sphere />
             </div>
         </section>
     )

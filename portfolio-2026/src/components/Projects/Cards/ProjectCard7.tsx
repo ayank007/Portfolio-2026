@@ -1,12 +1,12 @@
 import mikasa from '../../../assets/projects/mikasa.png'
 
-const ProjectCard5 = ({ data }: any) => {
+const ProjectCard7 = ({ data }: any) => {
     const removeSkeleton = (img: HTMLImageElement) => {
         img.parentElement?.classList.remove('skeleton')
     }
     return (
-        <div className="project project5">
-            <div className="view flex1 overflow-hidden rounded-md">
+        <div className="project project7">
+            <div className="view">
                 <div
                     className="imgbg absolute rounded overflow-hidden w-[180px] top-20 -left-6">
                     <img
@@ -28,4 +28,4 @@ const ProjectCard5 = ({ data }: any) => {
     )
 }
 
-export default ProjectCard5;
+export default ProjectCard7;

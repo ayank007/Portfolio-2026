@@ -1,8 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import Lenis from 'lenis';
-
-const BubbleButton: React.FC = ({ text, link }: any) => {
+interface BubbleButtonProps {
+    text: string;
+    link: string;
+}
+const BubbleButton = ({ text, link }: BubbleButtonProps) => {
     const wrapperRef = useRef<HTMLDivElement>(null);
     const mainPillRef = useRef<HTMLDivElement>(null);
     const leftCircleRef = useRef<HTMLDivElement>(null);

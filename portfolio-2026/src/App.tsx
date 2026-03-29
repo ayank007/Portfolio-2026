@@ -1,31 +1,92 @@
 import './App.scss'
 import { useState, createContext, useContext, useEffect, useRef } from 'react'
-import { Outlet, Link } from '@tanstack/react-router'
+import { Outlet } from '@tanstack/react-router'
 import contentRaw from './content/lang.json'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import FluidCursor from './utils/FluideCursor'
 import { ReactLenis, type LenisRef } from 'lenis/react'
+import Navbar from './components/Navbar'
+import { NavCtxProvider } from './context/openNavpage'
+import Navpage from './components/Navpage'
+interface ProjectItem {
+  title: string
+  desc: string
+}
+
+interface CareerItem {
+  title: string
+  title2: string
+  timeline: string
+  content: string[]
+}
+export interface ContentSchema {
+  hero: {
+    name: string;
+    title: string;
+    action: string;
+    intro: string[];
+  };
+  projects: {
+    title: string;
+    skills: string[];
+    // This allows project1, project2, project8, etc. 
+    [key: `project${number}`]: ProjectItem;
+  };
+  career: {
+    title: string;
+    title2: string;
+    data: CareerItem[];
+  };
+  about: {
+    title: string;
+    desc1: string;
+    desc2: string;
+    title2: string;
+    title3: string;
+    title4: string;
+    diery: {
+      intro: string;
+      [key: string]: string; // Allows chess, reading, football, etc.
+    };
+  };
+  contact: {
+    title: string;
+    title2: string;
+    heading: string;
+    heading2: string[];
+    name: string;
+    desc: string;
+    contact: string;
+    reason: {
+      title: string;
+      option: string[];
+    };
+    submit: string;
+    ending: string;
+  };
+  footer: string;
+}
 
 // 1. Define valid language keys based on your JSON
 type LangCode = 'eng' | 'ben' | 'hi' | 'ta' | 'es' | 'ja'
 
 // 2. Cast the JSON to a Record to fix the indexing error
-const content = contentRaw as Record<LangCode, typeof contentRaw['eng']>
+const content = contentRaw as unknown as Record<LangCode, ContentSchema>
 
 interface LangContextType {
   lang: LangCode
   setLang: (l: LangCode) => void
-  data: typeof contentRaw['eng']
+  data: ContentSchema
 }
 
 export const LangContext = createContext<LangContextType | null>(null)
 
 export const useLang = () => {
-  const ctx = useContext(LangContext)
-  if (!ctx) throw new Error("useLang must be used within Provider")
-  return ctx
+  return useContext(LangContext)
 }
 
+gsap.registerPlugin(ScrollTrigger)
 function App() {
   const lenisRef = useRef<LenisRef>(null)
   const [lang, setLang] = useState<LangCode>('eng')
@@ -58,20 +119,12 @@ function App() {
   return (
     <LangContext.Provider value={{ lang, setLang, data }}>
       <ReactLenis root ref={lenisRef} options={{ lerp: 0.1, duration: 1.5, autoRaf: false }}>
-        {/* 'relative' is fine, but NO 'h-screen' here or scroll breaks */}
         <div className="relative w-full text-white">
-          <nav className="fixed top-0 w-full z-50 flex justify-between p-6 bg-black/40 backdrop-blur-md">
-            <Link to="/">Home</Link>
-            <select
-              value={lang}
-              onChange={(e) => setLang(e.target.value as LangCode)}
-              className="bg-transparent border border-white rounded px-2"
-            >
-              {Object.keys(content).map(code => (
-                <option key={code} value={code} className="text-black">{code.toUpperCase()}</option>
-              ))}
-            </select>
-          </nav>
+
+          <NavCtxProvider>
+            <Navbar />
+            <Navpage />
+          </NavCtxProvider>
 
           <main className='bg-theme'>
             <FluidCursor />
