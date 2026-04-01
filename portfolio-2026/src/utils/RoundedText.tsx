@@ -1,4 +1,4 @@
-import { Children, useRef } from 'react'
+import { useRef } from 'react'
 import { useIsomorphicLayoutEffect } from "../useIsomorphicLayoutEffect"
 import gsap from "gsap"
 import SplitText from './SplitText'

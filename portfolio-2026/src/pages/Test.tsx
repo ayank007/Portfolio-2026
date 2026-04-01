@@ -1,6 +1,5 @@
 import Profile1 from '../components/About/Profile';
 import Profile2 from '../components/About/Profile2';
-import BubbleButton from '../utils/BubbleButton';
 
 export default function App() {
 

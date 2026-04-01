@@ -21,6 +21,7 @@ interface CareerItem {
   content: string[]
 }
 export interface ContentSchema {
+  nav: any
   hero: {
     name: string;
     title: string;

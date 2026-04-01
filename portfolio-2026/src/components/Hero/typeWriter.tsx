@@ -8,7 +8,7 @@ const TypeWriter = ({ data }: any) => {
                     {data.map((intro: string, key: number) => {
                         return (
                             <span key={key}>
-                                {intro.split(' ').map((introWord: string, key1: number) => {
+                                {intro.split(' ').map((introWord: string, _) => {
                                     return (
                                         " " + introWord + " "
                                     )

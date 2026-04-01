@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ayan from "../../assets/img-ayan-1.webp";
 import "./style.scss";
 import Diery from './Diery';
 import MobileDiery from './MobileDiery';

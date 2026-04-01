@@ -9,7 +9,9 @@ import Footer from '../components/Footer'
 import ArcSlider from '../components/About/GalleryMarqee'
 
 const Home = () => {
-    const { data } = useLang()
+    const context = useLang();
+    if (!context) return null;
+    const { data } = context;
 
     return (
         <>

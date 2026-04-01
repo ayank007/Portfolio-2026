@@ -53,7 +53,7 @@ const PointCanvas = (props: any) => {
             gridCtx.fill()
         }
 
-        draw(size = this.minSize) {
+        draw() {
             gridCtx.beginPath()
             gridCtx.fillStyle = this.color
             gridCtx.arc(this.x, this.y, this.minSize, 0, Math.PI * 2)

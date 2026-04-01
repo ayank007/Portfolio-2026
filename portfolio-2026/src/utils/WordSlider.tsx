@@ -22,7 +22,7 @@ const WordSlider: React.FC<WordSliderProps> = ({ data }) => {
                 // PREVENTION: Don't run if tab is hidden to avoid stacking
                 if (document.hidden) return;
 
-                const prevIndex = currentIndex.current;
+                // const prevIndex = currentIndex.current;
                 currentIndex.current = (currentIndex.current + 1) % words.length;
 
                 const currentWord = containerRef.current?.querySelector(".word-node:last-child");
