@@ -66,7 +66,7 @@ const Hero = ({ data }: any) => {
                     <p className='description mt-4 text-base xl:text-xl'>
                         {data.title}
                     </p>
-                    <Link to="/" hash="Work">
+                    <Link to="/" hash="Experience">
                         <div>
                             <MagneticElement padding={true} velocity={100}>
                                 <div className='callToActionBtn pointer-events-none capitalize'>

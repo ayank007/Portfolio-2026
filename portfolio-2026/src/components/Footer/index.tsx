@@ -10,8 +10,9 @@ import './watch.scss'
 import './cat.scss'
 
 import football from '../../assets/footer/football.png'
-import ronaldo from '../../assets/footer/cr7.jpg'
-import messi from '../../assets/footer/messi.jpg'
+import ronaldo from '../../assets/footer/cr7.png'
+import messi from '../../assets/footer/messi.png'
+import virat from '../../assets/footer/virat kohli.png'
 import { useIsomorphicLayoutEffect } from '../../useIsomorphicLayoutEffect'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -263,6 +264,9 @@ const Footer = ({ data }: any) => {
                 </div>
                 <div className="ronaldo">
                     <img src={ronaldo} alt="" />
+                </div>
+                <div className='viratKohli'>
+                    <img src={virat} alt="" />
                 </div>
             </div>
         </footer>

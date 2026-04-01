@@ -10,7 +10,7 @@ import Link2 from '../../utils/CustomLinks/Link2'
 import Sphere from './TagCloud'
 import MagneticElement from '../../utils/magneticElement'
 
-function Navpage() {
+function Navpage({ data }: any) {
     const { navpageStatus }: any = NavpageToggler()
     const containerRef = useRef<HTMLDivElement>(null)
 
@@ -97,32 +97,32 @@ function Navpage() {
                     <li className='work-item' data-img="img-1">
                         <Link2 to={'Home'}>
                             <span>01.</span>
-                            <RollingText title="Home" />
+                            <RollingText title={data.home} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-4">
                         <Link2 to={'#Projects'}>
                             <span>02.</span>
-                            <RollingText title="Projects" />
+                            <RollingText title={data.projects} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-2">
                         <Link2 to={'#Experience'}>
                             <span>03.</span>
-                            <RollingText title="Skills &nbsp; &&nbsp;  Experience" />
+                            <RollingText title={data.experience} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-3">
                         <Link2 to={"#About"}>
                             <span>04.</span>
-                            <RollingText title="About&nbsp;  Me" />
+                            <RollingText title={data.about} />
                         </Link2>
                     </li>
                 </ul>
                 <div className='mt-10 mb-14'>
                     <MagneticElement>
                         <Link2 to="#Contact">
-                            <div className='bg-white text-[#181818] px-10 py-3 font-semibold text-xl rounded-full'>Let's Connect</div>
+                            <div className='bg-white text-[#181818] px-10 py-3 font-semibold text-xl rounded-full'>{data.contact}</div>
                         </Link2>
                     </MagneticElement>
                 </div>

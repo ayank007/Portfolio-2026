@@ -101,7 +101,11 @@ const ArcSlider = ({ data }: any) => {
     return (
         <div
             className="relative w-full overflow-hidden bg-[#FFEDD5] z-10">
-            <div className='mt-4 -mb-10'><Heading2 title="About" theme="light">My Travel Stories</Heading2></div>
+            <div className='mt-4 -mb-10'>
+                <Heading2 title={data.title6} theme="light">
+                    {data.title5}
+                </Heading2>
+            </div>
             <div
                 ref={containerRef} className='relative w-full overflow-hidden z-10'
             >

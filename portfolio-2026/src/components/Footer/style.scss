@@ -143,6 +143,19 @@
     }
 }
 
+.viratKohli {
+    position: absolute;
+    top: 190px;
+    width: 130px;
+    left: 40px;
+    border: 7px solid transparent;
+    border-image-source: url('../../assets/footer/frame.png');
+    border-image-slice: 10;
+    border-image-repeat: round;
+    overflow: hidden;
+    filter: brightness(0.7);
+}
+
 .ronaldo {
     position: absolute;
     top: 80px;
@@ -154,7 +167,7 @@
     height: 150px;
     border: 8px solid transparent;
     border-image-source: url('../../assets/footer/frame.png');
-    border-image-slice: 60;
+    border-image-slice: 10;
     border-image-repeat: round;
     overflow: hidden;
 

@@ -1,3 +1,6 @@
+@use "sass:math";
+@use "sass:string";
+
 #Work {
     .Link {
         cursor: pointer;
@@ -189,13 +192,13 @@
 
 // n is number of stars required
 @function multiple-box-shadow ($n) {
-    $value: '#{random(2000)}px #{random(2000)}px #FFF';
+    $value: '#{math.random(2000)}px #{math.random(2000)}px #FFF';
 
     @for $i from 2 through $n {
-        $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+        $value: '#{$value} , #{math.random(2000)}px #{math.random(2000)}px #FFF';
     }
 
-    @return unquote($value);
+    @return string.unquote($value);
 }
 
 .project6 .view {
@@ -381,11 +384,11 @@ $bg-height: 50px;
 
         @for $i from 1 through 20 {
             &:nth-child(#{$i}) {
-                $delay: random(9999) + 0ms;
-                top: calc(50% - #{random(400) - 200px});
-                left: calc(50% - #{random(300) + 0px});
+                $delay: math.random(9999) + 0ms;
+                top: calc(50% - #{math.random(400) - 200px});
+                left: calc(50% - #{math.random(300) + 0px});
                 animation-delay: $delay;
-                // opacity: random(50) / 100 + 0.5;
+                // opacity: math.random(50) / 100 + 0.5;
 
                 &::before,
                 &::after {

@@ -180,7 +180,7 @@ const Experiences = ({ data }: any) => {
     }, [gapX, gapY]);
 
     return (
-        <section className="bg-[#FFEDD5] flex flex-col gap-16 items-center justify-center p-4 md:p-10 select-none z-10 relative overflow-hidden font-sans text-white py-12 lg:py-16">
+        <section id='Experience' className="bg-[#FFEDD5] flex flex-col gap-16 items-center justify-center p-4 md:p-10 select-none z-10 relative overflow-hidden font-sans text-white py-12 lg:py-16">
             <div className='text-[#181818] font-bold text-2xl md:text-3xl max-w-7xl leading-none text-center'>
                 <Heading3 data={data.title2} />
             </div>
@@ -283,11 +283,11 @@ const Experiences = ({ data }: any) => {
 
                         <div ref={navContainerRef} className="flex items-center gap-10 mt-16">
                             <button onClick={movePrev} className="text-white text-4xl cursor-pointer hover:scale-110 transition-transform">❮</button>
-                            <div className="hidden md:block"><BubbleButton text="Download My CV" link="" /></div>
+                            <div className="hidden md:block"><BubbleButton text={data.button} link="./Ayan-CV.pdf" /></div>
                             <button onClick={() => moveNext("right")} className="text-white text-4xl cursor-pointer hover:scale-110 transition-transform">❯</button>
                         </div>
                         <div className="md:hidden mt-8">
-                            <BubbleButton text="Download My CV" link="" />
+                            <BubbleButton text={data.button} link="./Ayan-CV.pdf" />
                         </div>
                     </div>
                 </div>

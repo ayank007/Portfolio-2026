@@ -69,7 +69,7 @@ export interface ContentSchema {
 }
 
 // 1. Define valid language keys based on your JSON
-type LangCode = 'eng' | 'ben' | 'hi' | 'ta' | 'es' | 'ja'
+type LangCode = 'eng' | 'ben' | 'hi' | 'ta' | 'te' | 'kn' | 'spa' | 'ja' | 'nl' | 'de'
 
 // 2. Cast the JSON to a Record to fix the indexing error
 const content = contentRaw as unknown as Record<LangCode, ContentSchema>
@@ -122,8 +122,8 @@ function App() {
         <div className="relative w-full text-white">
 
           <NavCtxProvider>
-            <Navbar />
-            <Navpage />
+            <Navbar data={data.nav} />
+            <Navpage data={data.nav} />
           </NavCtxProvider>
 
           <main className='bg-theme'>
