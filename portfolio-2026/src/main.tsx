@@ -17,7 +17,7 @@ const rootRoute = createRootRoute({
 // 2. Home Route (Injected into App's Outlet)
 const indexRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/',
+  path: "/",
   component: Home,
 })
 const testRoute = createRoute({
@@ -28,7 +28,7 @@ const testRoute = createRoute({
 
 // 3. Register Router
 const routeTree = rootRoute.addChildren([indexRoute, testRoute])
-const router = createRouter({ routeTree })
+const router = createRouter({ routeTree, basepath: (import.meta.env.VITE_BASE_PATH || '/').replace(/\/$/, '') })
 
 declare module '@tanstack/react-router' {
   interface Register {
