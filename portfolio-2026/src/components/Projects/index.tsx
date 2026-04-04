@@ -130,30 +130,30 @@ const Projects = ({ data }: any) => {
                         <ProjectCard3 data={data.project3} />
                     </div>
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter(data.project4.title)}
-                        onMouseLeave={handleMouseLeave}>
-                        <ProjectCard4 data={data.project4} />
-                    </div>
-                </div>
-
-                <div className="column flex flex-col gap-3 md:gap-10 z-20">
-                    <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project5.title)}
                         onMouseLeave={handleMouseLeave}>
                         <ProjectCard5 data={data.project5} />
                     </div>
+                </div>
+
+                <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter(data.project2.title)}
+                        onMouseEnter={() => handleMouseEnter(data.project4.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard2 data={data.project2} />
+                        <ProjectCard4 data={data.project4} />
+                    </div>
+                    <div className="card"
+                        onMouseEnter={() => handleMouseEnter(data.project7.title)}
+                        onMouseLeave={handleMouseLeave}>
+                        <ProjectCard7 data={data.project7} />
                     </div>
                 </div>
 
                 <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card"
-                        onMouseEnter={() => handleMouseEnter(data.project7.title)}
+                        onMouseEnter={() => handleMouseEnter(data.project2.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard7 data={data.project7} />
+                        <ProjectCard2 data={data.project2} />
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project8.title)}

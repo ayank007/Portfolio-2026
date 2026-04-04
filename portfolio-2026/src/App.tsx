@@ -9,6 +9,7 @@ import { ReactLenis, type LenisRef } from 'lenis/react'
 import Navbar from './components/Navbar'
 import { NavCtxProvider } from './context/openNavpage'
 import Navpage from './components/Navpage'
+import PageLoader from './Loader'
 interface ProjectItem {
   title: string
   desc: string
@@ -94,6 +95,27 @@ function App() {
   const data = content[lang]
 
   useEffect(() => {
+    const lenis = lenisRef.current?.lenis;
+
+    if (lenis) {
+      // 1. Stop immediately on mount
+      lenis.stop();
+
+      // 2. Start only after the window has fully loaded
+      const handleLoad = () => {
+        lenis.start();
+      };
+
+      if (document.readyState === 'complete') {
+        handleLoad();
+      } else {
+        window.addEventListener('load', handleLoad);
+        return () => window.removeEventListener('load', handleLoad);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
     function update(time: number) {
       lenisRef.current?.lenis?.raf(time * 1000)
     }
@@ -118,22 +140,25 @@ function App() {
   }, []);
 
   return (
-    <LangContext.Provider value={{ lang, setLang, data }}>
-      <ReactLenis root ref={lenisRef} options={{ lerp: 0.1, duration: 1.5, autoRaf: false }}>
-        <div className="relative w-full text-white">
+    <>
+      <PageLoader />
+      <LangContext.Provider value={{ lang, setLang, data }}>
+        <ReactLenis root ref={lenisRef} options={{ lerp: 0.1, duration: 1.5, autoRaf: false }}>
+          <div className="relative w-full text-white">
 
-          <NavCtxProvider>
-            <Navbar data={data.nav} />
-            <Navpage data={data.nav} />
-          </NavCtxProvider>
+            <NavCtxProvider>
+              <Navbar data={data.nav} />
+              <Navpage data={data.nav} />
+            </NavCtxProvider>
 
-          <main className='bg-theme'>
-            <FluidCursor />
-            <Outlet />
-          </main>
-        </div>
-      </ReactLenis>
-    </LangContext.Provider >
+            <main className='bg-theme'>
+              <FluidCursor />
+              <Outlet />
+            </main>
+          </div>
+        </ReactLenis>
+      </LangContext.Provider >
+    </>
   )
 }
 

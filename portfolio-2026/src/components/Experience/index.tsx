@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Observer } from 'gsap/all';
 import BubbleButton from '../../utils/BubbleButton';
@@ -6,16 +6,6 @@ import "./style.scss";
 import Heading3 from '../../utils/Heading3';
 
 gsap.registerPlugin(Observer);
-
-interface CardData {
-    id: number;
-    title: string;
-    title2: string;
-    timeline: string;
-    content: string[];
-    bg: string;
-    text: string;
-}
 
 const Experiences = ({ data }: any) => {
     const sliderAreaRef = useRef<HTMLDivElement>(null);
@@ -36,12 +26,12 @@ const Experiences = ({ data }: any) => {
         { bg: "bg-[#4ecdc4]", text: "text-black" },
     ];
 
-    const [cardData] = useState<CardData[]>(() =>
+    const cardData = useMemo(() =>
         data.data.map((item: any, index: number) => {
             const style = styles[index % styles.length];
             return { ...item, id: index + 1, bg: style.bg, text: style.text };
-        })
-    );
+        }),
+        [data]); // Ensure language is a dependency here
 
     const [gapX, setGapX] = useState(35);
     const [gapY, setGapY] = useState(20);
@@ -215,7 +205,7 @@ const Experiences = ({ data }: any) => {
                     </div>
                     <nav className="flex flex-col gap-8">
                         <p className="text-[10px] text-white/20 uppercase tracking-[0.3em] font-black">Career Index</p>
-                        {cardData.map((item) => (
+                        {cardData.map((item: any) => (
                             <button key={item.id} onClick={() => jumpToPage(item.id)} className="text-white/40 hover:text-white text-xl font-bold transition-all text-left flex items-center gap-4 group cursor-pointer">
                                 <span className="text-[10px] opacity-10 group-hover:opacity-100 font-mono">0{item.id}</span>
                                 {item.title}
@@ -255,7 +245,7 @@ const Experiences = ({ data }: any) => {
                             // YOUR UPDATED HEIGHT
                             className="relative w-full max-w-sm md:max-w-xl h-[300px] lg:h-[450px] perspective-distant lg:cursor-none"
                         >
-                            {cardData.map((card, i) => (
+                            {cardData.map((card: any, i: number) => (
                                 <div
                                     key={card.id}
                                     data-id={card.id}

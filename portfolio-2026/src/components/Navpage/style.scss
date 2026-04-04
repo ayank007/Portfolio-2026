@@ -173,3 +173,22 @@ $delay: 0.1s;
         left: 0;
     }
 }
+
+@media (max-width: 1024px) {
+    #Navpage {
+        .menu {
+            ul {
+                width: 500px;
+                max-width: 100%;
+
+                li {
+                    padding: 0 20px;
+
+                    &::before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

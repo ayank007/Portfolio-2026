@@ -10,6 +10,11 @@ import Link2 from '../../utils/CustomLinks/Link2'
 import Sphere from './TagCloud'
 import MagneticElement from '../../utils/magneticElement'
 
+import imgHeader from '../../assets/nav/img-header.png'
+import imgProjects from '../../assets/nav/img-projects.png'
+import imgExperience from '../../assets/nav/img-career.png'
+import imgAbout from '../../assets/nav/img-about.png'
+
 function Navpage({ data }: any) {
     const { navpageStatus }: any = NavpageToggler()
     const containerRef = useRef<HTMLDivElement>(null)
@@ -86,12 +91,12 @@ function Navpage({ data }: any) {
     return (
         <section id='Navpage' ref={containerRef} className={navpageStatus ? 'active' : ''}>
             <div className="cursor-follower">
-                <img id="img-1" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=1000&auto=format&fit=crop" alt="" />
-                <img id="img-2" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop" alt="" />
-                <img id="img-3" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1574169208507-84376194878b?q=80&w=1000&auto=format&fit=crop" alt="" />
-                <img id="img-4" className="absolute w-full h-full object-cover" src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop" alt="" />
+                <img id="img-1" className="absolute w-full h-full object-cover" src={imgHeader} alt="" />
+                <img id="img-2" className="absolute w-full h-full object-cover" src={imgExperience} alt="" />
+                <img id="img-3" className="absolute w-full h-full object-cover" src={imgAbout} alt="" />
+                <img id="img-4" className="absolute w-full h-full object-cover" src={imgProjects} alt="" />
             </div>
-            <div className="menu w-1/2 flex1 flex-col">
+            <div className="menu w-full lg:w-1/2 flex1 flex-col">
                 <ul className='work-list'>
                     <div className="hover-reveal-bg"></div>
                     <li className='work-item' data-img="img-1">
@@ -113,7 +118,7 @@ function Navpage({ data }: any) {
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-3">
-                        <Link2 to={"#About"}>
+                        <Link2 to={"#AboutMe"}>
                             <span>04.</span>
                             <RollingText title={data.about} />
                         </Link2>
@@ -127,7 +132,7 @@ function Navpage({ data }: any) {
                     </MagneticElement>
                 </div>
             </div>
-            <div className="skills w-1/2 flex1">
+            <div className="skills w-1/2 hidden lg:flex justify-center items-center">
                 <div className="filter"></div>
                 <Sphere />
             </div>

@@ -442,3 +442,38 @@ $bg-height: 50px;
         width: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .project {
+        .texts {
+            h3 {
+                line-height: 1.2;
+                font-size: 20px;
+            }
+        }
+
+        .view {
+            min-height: 250px;
+
+            >*:not(canvas) {
+                zoom: 0.6;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    #projects-content {
+        gap: 0;
+    }
+
+    .project {
+        background-color: #fff9f2;
+        padding: 10px;
+        border-radius: 15px;
+
+        .view {
+            display: none;
+        }
+    }
+}

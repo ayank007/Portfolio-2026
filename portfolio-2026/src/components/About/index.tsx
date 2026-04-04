@@ -19,7 +19,7 @@ export default function About({ data }: any) {
   }, []);
 
   return (
-    <div className="bg-[#FFEDD5] z-10 flex items-center justify-center overflow-hidden font-sans antialiased px-6 py-12 lg:py-16">
+    <div id='AboutMe' className="bg-[#FFEDD5] z-10 flex items-center justify-center overflow-hidden font-sans antialiased px-6 py-12 lg:py-16">
       <div className="w-full max-w-[1600px] flex flex-col xl:flex-row items-center xl:items-stretch justify-center gap-y-8 gap-0">
 
         {/* LEFT SECTION: PURPLE CARD */}

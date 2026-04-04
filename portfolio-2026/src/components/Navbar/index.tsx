@@ -6,6 +6,8 @@ import { useLang } from '../../App'
 import Link2 from '../../utils/CustomLinks/Link2'
 import gsap from 'gsap'
 import { CustomEase } from 'gsap/CustomEase'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 gsap.registerPlugin(CustomEase);
 if (!CustomEase.get("main")) {
@@ -153,6 +155,9 @@ const Navbar = ({ data }: any) => {
                             <div data-sidenav-overlay data-sidenav-toggle className="sidenav__overlay" onClick={toggleSidenav}></div>
                             <nav data-sidenav-menu className="sidenav__menu">
                                 <div className="sidenav__menu-bg">
+                                    <div className='z-100 absolute top-6 right-6 text-black cursor-pointer hover:scale-110 transition-all duration-300' onClick={toggleSidenav}>
+                                        <FontAwesomeIcon icon={faXmark} />
+                                    </div>
                                     <div data-sidenav-panel className="sidenav__menu-bg-panel is--first"></div>
                                     <div data-sidenav-panel className="sidenav__menu-bg-panel is--second"></div>
                                     <div data-sidenav-panel className="sidenav__menu-bg-panel"></div>
@@ -182,7 +187,7 @@ const Navbar = ({ data }: any) => {
                     </div>
                 </div>
 
-                <div className="border-l border-solid border-light">
+                <div className="border-l border-solid border-light hidden sm:block">
                     <Link2 to="#Contact">
                         <MagneticElement velocity={80}>
                             <div className="nav Link">
