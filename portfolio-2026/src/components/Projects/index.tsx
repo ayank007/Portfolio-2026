@@ -86,6 +86,10 @@ const Projects = ({ data }: any) => {
                 }
             });
 
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
+
         }, containerRef); // Scope selectors to this container
 
         return () => ctx.revert(); // Cleanup on unmount

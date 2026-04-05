@@ -1,6 +1,6 @@
 import SquareBubbleCanvas from './squareBubbleCanvas'
-import bankbuddy from '../../../assets/projects/bankbuddy2.png'
-import mikasa from '../../../assets/projects/mikasa.png'
+import bankbuddy from '../../../assets/projects/bankbuddy2.webp'
+import mikasa from '../../../assets/projects/mikasa.webp'
 
 const ProjectCard4 = ({ data }: any) => {
     const removeSkeleton = (img: HTMLImageElement) => {
@@ -20,8 +20,7 @@ const ProjectCard4 = ({ data }: any) => {
                     />
                 </div>
                 <div
-                    className="imgbg absolute rounded skeleton overflow-hidden"
-                    style={{ width: '300px', bottom: '-2px', right: '-50px' }}>
+                    className="imgbg absolute rounded skeleton overflow-hidden -bottom-1 -right-12 w-[300px] max-w-[115%]">
                     <img
                         src={bankbuddy}
                         loading='lazy'

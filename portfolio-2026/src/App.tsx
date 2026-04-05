@@ -115,6 +115,26 @@ function App() {
     }
   }, []);
 
+  const FONT_URLS: Partial<Record<LangCode, string>> = {
+    ben: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600&display=swap',
+    hi: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600&display=swap',
+    ta: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;600&display=swap',
+    te: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;600&display=swap',
+    kn: 'https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;600&display=swap',
+  };
+
+  useEffect(() => {
+    const fontUrl = FONT_URLS[lang];
+
+    if (!fontUrl) return;
+    if (!document.querySelector(`link[href="${fontUrl}"]`)) {
+      const link = document.createElement('link');
+      link.href = fontUrl;
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    }
+  }, [lang]);
+
   useEffect(() => {
     function update(time: number) {
       lenisRef.current?.lenis?.raf(time * 1000)

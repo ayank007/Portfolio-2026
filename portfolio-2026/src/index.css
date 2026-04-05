@@ -5,19 +5,8 @@
     src: url('assets/fonts/Thunder-BoldLC.ttf');
 }
 @font-face {
-    font-family: 'signika';
-    src: url('assets/fonts/Signika-Bold.ttf');
-    font-weight: 700;
-}
-@font-face {
-    font-family: 'signika';
-    src: url('assets/fonts/Signika-Regular.ttf');
-    font-weight: 400;
-}
-@font-face {
-    font-family: 'signika';
-    src: url('assets/fonts/Signika-Medium.ttf');
-    font-weight: 500;
+    font-family: 'pixel';
+    src: url('assets/fonts/Pixeboy.ttf');
 }
 :root {
     --theme: #091922;
@@ -32,9 +21,9 @@
     --project4: var(--themeGreen);
     --project5: #AFDDD5;
     --themeLight: rgba(255, 255, 255, 0.65);
-    --thunder: 'thunder', 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
-    --pixel: sans-serif;
-    --signika: 'signika', 'Segoe UI', sans-serif;
+    --thunder: 'thunder',  'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
+    --pixel: 'pixel', sans-serif;
+    --signika: 'signika', sans-serif;
     --navbarHeight: 64px;
     --px: 30px;
     --f3xl: 50px;

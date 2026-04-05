@@ -1,8 +1,8 @@
-import gemBid from '../../../assets/projects/gemBid.png'
-import wordHighlighter from '../../../assets/projects/wordHighlighter.png'
-import mapScrapper from '../../../assets/projects/mapScrapper.jpg'
+import gemBid from '../../../assets/projects/gemBid.webp'
+import wordHighlighter from '../../../assets/projects/wordHighlighter.webp'
+import mapScrapper from '../../../assets/projects/img-thumb-mapScrapper.webp'
 import gem48 from '../../../assets/projects/gem48.png'
-import ghost from '../../../assets/projects/ghost.png'
+import ghost from '../../../assets/projects/ghost.webp'
 import SnowCanvas from './snowCanvas'
 
 const ProjectCard3 = ({ data }: any) => {
@@ -16,8 +16,7 @@ const ProjectCard3 = ({ data }: any) => {
                 <img src={ghost} className="w-10 absolute top-3 z-10 right-5" alt="" />
                 <img src={wordHighlighter} className="absolute w-16 top-44 z-10 right-6" alt="wordHighlighter" />
                 <div
-                    className="imgbg absolute bottom-4 rounded-lg -left-20 skeleton overflow-hidden"
-                    style={{ width: "350px" }}>
+                    className="imgbg absolute bottom-4 rounded-lg -left-20 skeleton overflow-hidden w-[350px] max-w-[125%]">
                     <img
                         loading='lazy'
                         src={gemBid}
@@ -27,7 +26,7 @@ const ProjectCard3 = ({ data }: any) => {
                     />
                 </div>
                 <div
-                    className="imgbg absolute top-8 left-10 rounded-lg skeleton overflow-hidden">
+                    className="imgbg absolute top-8 left-10 rounded-lg skeleton overflow-hidden max-w-full w-[350px]">
                     <img
                         loading='lazy'
                         src={mapScrapper}

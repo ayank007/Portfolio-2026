@@ -4,9 +4,9 @@ import { gsap } from 'gsap';
 import plane from "../../assets/about/plane.svg";
 import telescope from "../../assets/about/telescope.svg";
 import headphone from "../../assets/about/headphone.svg";
-import world from "../../assets/about/worldMap.jpg";
+import world from "../../assets/about/worldMap.webp";
 import shreekanta from "../../assets/about/shreekanta.jpg";
-import me from "../../assets/about/me.png";
+import me from "../../assets/about/me.webp";
 import FormattedText from '../../utils/FormattedText';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

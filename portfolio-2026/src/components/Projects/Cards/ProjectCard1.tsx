@@ -1,5 +1,5 @@
 import ArrowCanvas from "./arrowCanvas"
-import SS_portfolio from '../../../assets/projects/portfolio.png'
+import SS_portfolio from '../../../assets/projects/portfolio.webp'
 
 const ProjectCard1 = ({ data }: any) => {
     const removeSkeleton = (img: HTMLImageElement) => {

@@ -10,10 +10,10 @@ import Link2 from '../../utils/CustomLinks/Link2'
 import Sphere from './TagCloud'
 import MagneticElement from '../../utils/magneticElement'
 
-import imgHeader from '../../assets/nav/img-header.png'
-import imgProjects from '../../assets/nav/img-projects.png'
+import imgHeader from '../../assets/nav/img-header.webp'
+import imgProjects from '../../assets/nav/img-projects.webp'
 import imgExperience from '../../assets/nav/img-career.png'
-import imgAbout from '../../assets/nav/img-about.png'
+import imgAbout from '../../assets/nav/img-about.webp'
 
 function Navpage({ data }: any) {
     const { navpageStatus }: any = NavpageToggler()

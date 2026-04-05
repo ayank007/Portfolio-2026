@@ -1,5 +1,5 @@
 #Footer {
-    min-height: 600px;
+    min-height: 710px;
     height: calc(100vh - var(--navbarHeight));
     max-height: 1024px;
     margin-bottom: 0;
@@ -178,6 +178,14 @@
     }
 }
 
+@media screen and (max-width: 980px) {
+    #Window {
+        transform: scale(0.7);
+        top: 0;
+        left: 350px;
+    }
+}
+
 @media screen and (max-width: 700px) {
     #Footer {
         height: 750px;
@@ -208,5 +216,9 @@
 
     .messi {
         left: 20px;
+    }
+
+    .viratKohli {
+        left: 162px;
     }
 }
