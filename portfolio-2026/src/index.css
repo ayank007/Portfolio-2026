@@ -2,11 +2,13 @@
 
 @font-face {
     font-family: 'thunder';
-    src: url('assets/fonts/Thunder-BoldLC.ttf');
+    src: url('/fonts/Thunder-BoldLC.ttf') format('truetype');
+    font-display: swap;
 }
 @font-face {
     font-family: 'pixel';
-    src: url('assets/fonts/Pixeboy.ttf');
+    src: url('/fonts/Pixeboy.ttf') format('truetype');
+    font-display: swap;
 }
 :root {
     --theme: #091922;
@@ -21,9 +23,9 @@
     --project4: var(--themeGreen);
     --project5: #AFDDD5;
     --themeLight: rgba(255, 255, 255, 0.65);
-    --thunder: 'thunder',  'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
-    --pixel: 'pixel', sans-serif;
-    --signika: 'signika', sans-serif;
+    --thunder: 'thunder', 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
+    --pixel: 'pixel', 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
+    --signika: 'Signika', 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada', sans-serif;
     --navbarHeight: 64px;
     --px: 30px;
     --f3xl: 50px;
@@ -40,16 +42,7 @@
     --heading2: 150px;
     --sh: calc(100vh - var(--navbarHeight));
     --about: #eaffee;
-
-    font-family: var(--signika);
-    font-size: 16px;
-    font-weight: 400;
-    /* color-scheme: light dark; */
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
+    color-scheme: light;
 }
 @layer base {
   * {
@@ -84,12 +77,38 @@ html{
     padding: 0;
     margin: 0;background-color: #030712;
 }
+
 body{
     padding: 0;
     margin: 0;
     overflow-x: hidden !important;
     background-color: #D1FAE5;
-    color: var(--about);overscroll-behavior-y: none;
+    color: var(--about);
+    overscroll-behavior-y: none;
+    
+    font-family: var(--signika);
+    font-size: 16px;
+    font-weight: 400;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+html[lang="hi"] body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+html[lang="ben"] body {
+    font-family: 'Noto Sans Bengali', sans-serif;
+}
+html[lang="ta"] body {
+    font-family: 'Noto Sans Tamil', sans-serif;
+}
+html[lang="te"] body {
+    font-family: 'Noto Sans Telugu', sans-serif;
+}
+html[lang="kn"] body {
+    font-family: 'Noto Sans Kannada', sans-serif;
 }
 body > :not(#root):not(script):not(style) {
   display: none !important;

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLenis } from 'lenis/react';
@@ -24,7 +24,16 @@ const Projects = ({ data }: any) => {
 
     const [cursorText, setCursorText] = useState("");
 
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const isSmallScreen = window.innerWidth < 1024;
+        if (isSmallScreen) {
+            setIsMobile(true);
+        }
+    }, [])
+
     const handleMouseEnter = (title: string | null) => {
+        if (isMobile) return;
         const cursor = document.querySelector('#marquee-cursor');
 
         // LOGIC: If title is null, don't show the custom cursor
@@ -38,6 +47,7 @@ const Projects = ({ data }: any) => {
     };
 
     const handleMouseLeave = () => {
+        if (isMobile) return;
         const cursor = document.querySelector('#marquee-cursor');
         gsap.to(cursor, { scale: 0, opacity: 0, duration: 0.3 });
     };
@@ -48,9 +58,9 @@ const Projects = ({ data }: any) => {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             // 1. Column Speed Parallax
-            const isMobile = window.innerWidth < 1024;
+            const isMobileLocal = window.innerWidth < 1024;
 
-            const speeds = isMobile ? [0, -200, 0, -200] : [0, -200, -400, -600]; // Adjusted for 4 columns
+            const speeds = isMobileLocal ? [0, -200, 0, -200] : [0, -200, -400, -600]; // Adjusted for 4 columns
             const columns = gsap.utils.toArray<HTMLElement>('.column');
 
             columns.forEach((col, i) => {
@@ -69,22 +79,24 @@ const Projects = ({ data }: any) => {
                 );
             });
 
-            // 2. Dynamic Velocity Tilt
-            const allCards = gsap.utils.toArray<HTMLElement>('.card');
+            if (!isMobileLocal) {
+                // 2. Dynamic Velocity Tilt
+                const allCards = gsap.utils.toArray<HTMLElement>('.card');
 
-            ScrollTrigger.create({
-                onUpdate: (self) => {
-                    const velocity = self.getVelocity() / 100;
-                    const tilt = gsap.utils.clamp(-20, 20, velocity);
+                ScrollTrigger.create({
+                    onUpdate: (self) => {
+                        const velocity = self.getVelocity() / 100;
+                        const tilt = gsap.utils.clamp(-20, 20, velocity);
 
-                    gsap.to(allCards, {
-                        skewY: tilt,
-                        duration: 0.4,
-                        ease: "power2.out",
-                        overwrite: true, // Prevents animation jitter
-                    });
-                }
-            });
+                        gsap.to(allCards, {
+                            skewY: tilt,
+                            duration: 0.4,
+                            ease: "power2.out",
+                            overwrite: true, // Prevents animation jitter
+                        });
+                    }
+                });
+            }
 
             requestAnimationFrame(() => {
                 ScrollTrigger.refresh();
@@ -97,6 +109,7 @@ const Projects = ({ data }: any) => {
 
     // 3. Handle Snap Back via useLenis callback
     useLenis((lenisInstance) => {
+        if (isMobile) return;
         if (Math.abs(lenisInstance.velocity) < 0.1) {
             gsap.to('.card', {
                 skewY: 0,
@@ -106,24 +119,39 @@ const Projects = ({ data }: any) => {
         }
     });
 
+    const renderCard = (CardComponent: any, projectData: any, className: string) => {
+        if (isMobile) {
+            // On mobile, ONLY render the text. The heavy canvas components are never mounted!
+            return (
+                <div className={`project ${className}`}>
+                    <div className="texts">
+                        <h3>{projectData.title}</h3>
+                        <p>{projectData.desc}</p>
+                    </div>
+                </div>
+            );
+        }
+        // On desktop, render the full interactive card
+        return <CardComponent data={projectData} />;
+    };
 
     return (
         <div ref={containerRef} id='Projects' className="z-10 py-40 mt-[200px] opacity-1">
             <h2 id="projects-heading" className='max-w-[800px] text-center mx-auto projects-heading text-5xl sm:text-6xl md:text-7xl font-black text-black thunder lg:text-[90px]' dangerouslySetInnerHTML={{ __html: data.title }} />
-            <MarqueeCursor text={cursorText} />
+            {!isMobile && <MarqueeCursor text={cursorText} />}
             <div id="projects-content" className="mt-8 grid grid-cols-[repeat(2,1fr)] lg:grid-cols-4 gap-3 md:gap-10 px-4 xl:px-32 container mx-auto items-start z-10">
 
                 <div className="column flex flex-col gap-3 md:gap-10 z-20">
                     <div className="card z-20"
                         onMouseEnter={() => handleMouseEnter(data.project1.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard1 data={data.project1} />
+                        {renderCard(ProjectCard1, data.project1, "project1")}
                     </div>
 
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project6.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard6 data={data.project6} />
+                        {renderCard(ProjectCard6, data.project6, "project6")}
                     </div>
                 </div>
 
@@ -131,12 +159,12 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project3.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard3 data={data.project3} />
+                        {renderCard(ProjectCard3, data.project3, "project3")}
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project5.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard5 data={data.project5} />
+                        {renderCard(ProjectCard5, data.project5, "project5")}
                     </div>
                 </div>
 
@@ -144,12 +172,12 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project4.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard4 data={data.project4} />
+                        {renderCard(ProjectCard4, data.project4, "project4")}
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project7.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard7 data={data.project7} />
+                        {renderCard(ProjectCard7, data.project7, "project7")}
                     </div>
                 </div>
 
@@ -157,18 +185,20 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project2.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard2 data={data.project2} />
+                        {renderCard(ProjectCard2, data.project2, "project2")}
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project8.title)}
                         onMouseLeave={handleMouseLeave}>
-                        <ProjectCard8 data={data.project8} />
+                        {renderCard(ProjectCard8, data.project8, "project8")}
                     </div>
                 </div>
             </div>
-            <div className='absolute w-full bottom-0'>
-                <PhysicsTags data={data.skills} />
-            </div>
+            {!isMobile && (
+                <div className='absolute w-full bottom-0'>
+                    <PhysicsTags data={data.skills} />
+                </div>
+            )}
         </div>
     )
 }

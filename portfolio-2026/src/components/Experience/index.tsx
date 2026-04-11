@@ -37,27 +37,27 @@ const Experiences = ({ data }: any) => {
     const [gapY, setGapY] = useState(20);
     const scaleStep = 0.06;
 
-    const onGlobalMouseMove = (e: MouseEvent) => {
-        if (window.innerWidth < 1024 || !sliderAreaRef.current || !cursorRef.current) return;
-        const target = e.target as HTMLElement;
-        const isInsideSection = sliderAreaRef.current.contains(target);
-        const card = target.closest('.card') as HTMLElement;
-        const scrollArea = target.closest('.card-content-area') as HTMLElement;
+    // const onGlobalMouseMove = (e: MouseEvent) => {
+    //     if (window.innerWidth < 1024 || !sliderAreaRef.current || !cursorRef.current) return;
+    //     const target = e.target as HTMLElement;
+    //     const isInsideSection = sliderAreaRef.current.contains(target);
+    //     const card = target.closest('.card') as HTMLElement;
+    //     const scrollArea = target.closest('.card-content-area') as HTMLElement;
 
-        let isOverScrollbar = false;
-        if (card && scrollArea) {
-            const rect = card.getBoundingClientRect();
-            if ((e.clientX - rect.left) > rect.width - 20) isOverScrollbar = true;
-        }
+    //     let isOverScrollbar = false;
+    //     if (card && scrollArea) {
+    //         const rect = card.getBoundingClientRect();
+    //         if ((e.clientX - rect.left) > rect.width - 20) isOverScrollbar = true;
+    //     }
 
-        if (isInsideSection && card && !isOverScrollbar) {
-            gsap.to(cursorRef.current, { x: e.clientX, y: e.clientY, opacity: 1, duration: 0.1 });
-            document.body.style.cursor = "none";
-        } else {
-            gsap.to(cursorRef.current, { opacity: 0, duration: 0.1 });
-            document.body.style.cursor = isOverScrollbar ? "pointer" : "auto";
-        }
-    };
+    //     if (isInsideSection && card && !isOverScrollbar) {
+    //         gsap.to(cursorRef.current, { x: e.clientX, y: e.clientY, opacity: 1, duration: 0.1 });
+    //         document.body.style.cursor = "none";
+    //     } else {
+    //         gsap.to(cursorRef.current, { opacity: 0, duration: 0.1 });
+    //         document.body.style.cursor = isOverScrollbar ? "pointer" : "auto";
+    //     }
+    // };
 
     const handleMouseEnter = () => {
         if ((window as any).lenis) (window as any).lenis.stop();
@@ -152,7 +152,44 @@ const Experiences = ({ data }: any) => {
         };
         handleResize();
         window.addEventListener('resize', handleResize);
-        window.addEventListener('mousemove', onGlobalMouseMove);
+
+        // window.addEventListener('mousemove', onGlobalMouseMove);
+        let xTo: any, yTo: any;
+        if (cursorRef.current) {
+            xTo = gsap.quickTo(cursorRef.current, "x", { duration: 0.1, ease: "power3" });
+            yTo = gsap.quickTo(cursorRef.current, "y", { duration: 0.1, ease: "power3" });
+        }
+        const onGlobalMouseMove = (e: MouseEvent) => {
+            if (!sliderAreaRef.current || !cursorRef.current) return;
+            const target = e.target as HTMLElement;
+            const isInsideSection = sliderAreaRef.current.contains(target);
+            const card = target.closest('.card') as HTMLElement;
+            const scrollArea = target.closest('.card-content-area') as HTMLElement;
+
+            let isOverScrollbar = false;
+            if (card && scrollArea) {
+                const rect = card.getBoundingClientRect();
+                if ((e.clientX - rect.left) > rect.width - 20) isOverScrollbar = true;
+            }
+
+            if (isInsideSection && card && !isOverScrollbar) {
+                if (xTo && yTo) {
+                    xTo(e.clientX);
+                    yTo(e.clientY);
+                }
+                cursorRef.current.style.opacity = "1"; // Raw CSS is faster here than GSAP
+                document.body.style.cursor = "none";
+            } else {
+                cursorRef.current.style.opacity = "0";
+                document.body.style.cursor = isOverScrollbar ? "pointer" : "auto";
+            }
+        };
+        const isDesktop = window.innerWidth >= 1024;
+        if (isDesktop) {
+            window.addEventListener('mousemove', onGlobalMouseMove);
+        }
+
+
         const ctx = gsap.context(() => {
             const cards = cardsElementsRef.current.filter((el): el is HTMLDivElement => el !== null);
             refreshLayout(cards, true);
@@ -164,13 +201,16 @@ const Experiences = ({ data }: any) => {
         });
         return () => {
             window.removeEventListener('resize', handleResize);
-            window.removeEventListener('mousemove', onGlobalMouseMove);
+            // window.removeEventListener('mousemove', onGlobalMouseMove);
+            if (isDesktop) {
+                window.removeEventListener('mousemove', onGlobalMouseMove);
+            }
             ctx.revert();
         };
     }, [gapX, gapY]);
 
     return (
-        <section id='Experience' className="bg-[#FFEDD5] flex flex-col gap-16 items-center justify-center p-4 md:p-10 select-none z-10 relative overflow-hidden font-sans text-white py-12 lg:py-16">
+        <section id='Experience' className="bg-[#FFEDD5] flex flex-col gap-16 items-center justify-center p-4 md:p-10 select-none z-10 relative overflow-hidden text-white py-12 lg:py-16">
             <div className='text-[#181818] font-bold text-2xl md:text-3xl max-w-7xl leading-none text-center'>
                 <Heading3 data={data.title2} />
             </div>

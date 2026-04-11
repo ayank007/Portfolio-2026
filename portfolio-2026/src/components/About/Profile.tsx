@@ -4,6 +4,7 @@ import ayan1 from "../../assets/img-ayan-1.webp";
 import ayan2 from "../../assets/img-ayan-2.webp";
 
 const Profile: React.FC = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
     const l1Ref = useRef<HTMLDivElement>(null);
     const l2Ref = useRef<HTMLDivElement>(null);
     const l3Ref = useRef<HTMLDivElement>(null);
@@ -11,7 +12,7 @@ const Profile: React.FC = () => {
     const maskCircleRef = useRef<SVGCircleElement>(null);
 
     useEffect(() => {
-        if (!l1Ref.current || !maskCircleRef.current) return;
+        if (!containerRef.current || !l1Ref.current || !maskCircleRef.current) return;
 
         const length = 2 * Math.PI * 48;
         const sizeOuter = l1Ref.current.offsetWidth + 25;
@@ -27,7 +28,13 @@ const Profile: React.FC = () => {
             repeat: -1,
             repeatDelay: 2,
             defaults: { ease: "power3.inOut" },
-            onRepeat: () => { isAlt = !isAlt; } // Toggle state every loop
+            onRepeat: () => { isAlt = !isAlt; },
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top bottom",
+                end: "bottom top",
+                toggleActions: "play pause resume pause"
+            }
         });
 
         // 1. DASH REVEAL
@@ -81,7 +88,7 @@ const Profile: React.FC = () => {
     );
 
     return (
-        <div className="relative min-h-[350px] sm:min-h-[400px] w-full h-full flex items-center justify-center bg-transparent select-none overflow-hidden">
+        <div ref={containerRef} className="relative min-h-[350px] sm:min-h-[400px] w-full h-full flex items-center justify-center bg-transparent select-none overflow-hidden">
 
             {/* DASHED RING */}
             <div ref={borderRingRef} className="absolute z-50 pointer-events-none flex items-center justify-center overflow-visible" style={{ width: 0, height: 0 }}>

@@ -88,6 +88,9 @@ export const useLang = () => {
   return useContext(LangContext)
 }
 
+const isMobileOS = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+  (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+
 gsap.registerPlugin(ScrollTrigger)
 function App() {
   const lenisRef = useRef<LenisRef>(null)
@@ -95,9 +98,8 @@ function App() {
   const data = content[lang]
 
   useEffect(() => {
-    const lenis = lenisRef.current?.lenis;
-
-    if (lenis) {
+    const lenis = (lenisRef.current as any)?.lenis;
+    if (lenis && !isMobileOS) {
       // 1. Stop immediately on mount
       lenis.stop();
 
@@ -124,6 +126,8 @@ function App() {
   };
 
   useEffect(() => {
+    document.documentElement.lang = lang;
+
     const fontUrl = FONT_URLS[lang];
 
     if (!fontUrl) return;
@@ -133,9 +137,11 @@ function App() {
       link.rel = 'stylesheet';
       document.head.appendChild(link);
     }
+
   }, [lang]);
 
   useEffect(() => {
+    if (isMobileOS) return;
     function update(time: number) {
       lenisRef.current?.lenis?.raf(time * 1000)
     }

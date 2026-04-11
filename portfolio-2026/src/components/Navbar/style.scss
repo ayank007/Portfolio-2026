@@ -193,6 +193,21 @@ $delay: 0.05s;
     background-color: #b34726;
 }
 
+html:has([data-nav-state="open"]) {
+    overflow: hidden !important;
+    overscroll-behavior: none;
+
+    body {
+        /* Prevents the 'swipe' from reaching the background layer */
+        touch-action: none;
+        overflow: hidden !important;
+    }
+}
+
+.sidenav {
+    touch-action: auto !important;
+    pointer-events: auto;
+}
 
 .sidenav__header {
     z-index: 10;
@@ -279,10 +294,11 @@ $delay: 0.05s;
     max-width: 90%;
     height: 100%;
     margin-left: auto;
-    padding-top: 6em;
+    padding-top: 2em;
     padding-bottom: 2em;
     position: relative;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .sidenav__menu-bg {

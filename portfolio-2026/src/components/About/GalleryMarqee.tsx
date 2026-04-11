@@ -21,7 +21,7 @@ const ArcSlider = ({ data }: any) => {
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     const config = useRef<SliderConfig>({
-        cardCount: 20,
+        cardCount: 6,
         baseSpeed: 0.02,
         scrollBoost: 0.05,
         spacing: 0,

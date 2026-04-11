@@ -90,7 +90,9 @@ const Navbar = ({ data }: any) => {
         const timeline = tl.current;
 
         if (isSidenavOpen) {
-            // 2. Fixed Flash Error: Force starting positions BEFORE showing the container
+            // lenis?.stop();
+            // document.body.style.overflowY = 'hidden';
+
             timeline.clear()
                 // Hide links and overlay instantly
                 .set(q("[data-sidenav-link]"), { yPercent: 140, rotate: 10, autoAlpha: 0 })
@@ -99,20 +101,24 @@ const Navbar = ({ data }: any) => {
                 .set(q("[data-sidenav-overlay]"), { autoAlpha: 0 })
                 .set(q("[data-sidenav-menu]"), { xPercent: 0 })
 
-                // Now safely display block (nothing will flash because everything is hidden)
                 .set(q("[data-sidenav-wrap]"), { display: "block" })
 
-                // Animate into final positions
                 .to(q("[data-sidenav-overlay]"), { autoAlpha: 1 })
                 .to(q("[data-sidenav-panel]"), { xPercent: 0, stagger: 0.12, duration: 0.575 }, "<")
                 .to(q("[data-sidenav-link]"), { yPercent: 0, rotate: 0, autoAlpha: 1, stagger: 0.05 }, "<+=0.35")
                 .to(q("[data-sidenav-fade]"), { autoAlpha: 1, yPercent: 0, stagger: 0.04 }, "<+=0.2");
 
         } else if (isMounted.current) {
+            // document.body.style.overflowY = 'auto';
+            // lenis?.start();
+
             timeline.clear()
                 .to(q("[data-sidenav-overlay]"), { autoAlpha: 0 })
                 .to(q("[data-sidenav-menu]"), { xPercent: 120 }, "<")
                 .set(q("[data-sidenav-wrap]"), { display: "none" });
+        } else {
+            // document.body.style.overflowY = 'auto';
+            // lenis?.start();
         }
 
         isMounted.current = true;
@@ -153,7 +159,7 @@ const Navbar = ({ data }: any) => {
                     <div className="sidenav" ref={sidenavContainer}>
                         <div data-sidenav-wrap data-nav-state={isSidenavOpen ? "open" : "closed"} className="sidenav__nav">
                             <div data-sidenav-overlay data-sidenav-toggle className="sidenav__overlay" onClick={toggleSidenav}></div>
-                            <nav data-sidenav-menu className="sidenav__menu">
+                            <nav data-sidenav-menu data-nav-state={isSidenavOpen ? "open" : "closed"} className="sidenav__menu">
                                 <div className="sidenav__menu-bg">
                                     <div className='z-100 absolute top-6 right-6 text-black cursor-pointer hover:scale-110 transition-all duration-300' onClick={toggleSidenav}>
                                         <FontAwesomeIcon icon={faXmark} />
@@ -162,7 +168,7 @@ const Navbar = ({ data }: any) => {
                                     <div data-sidenav-panel className="sidenav__menu-bg-panel is--second"></div>
                                     <div data-sidenav-panel className="sidenav__menu-bg-panel"></div>
                                 </div>
-                                <div className="sidenav__menu-inner">
+                                <div className="sidenav__menu-inner h-full max-h-dvh overflow-y-auto scrollbar-hide">
                                     <ul className="sidenav__menu-list">
                                         {LANGUAGES.map((item, i) => (
                                             <li className="sidenav__menu-list-item" key={item.code}>

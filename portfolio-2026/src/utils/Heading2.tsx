@@ -2,11 +2,13 @@ import './heading2.scss'
 import { useRef } from 'react'
 import SplitText from './SplitText'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
+import { useLang } from "../App";
 
 const Heading2 = (props: any) => {
     const rubberText = useRef<HTMLParagraphElement>(null)
     const rubberWholeText = useRef<HTMLParagraphElement>(null)
-    const lang = 'eng'
+
+    const { lang } = useLang() || { lang: 'eng' };
 
     useIsomorphicLayoutEffect(() => {
         const textEl = rubberText.current;
@@ -50,7 +52,7 @@ const Heading2 = (props: any) => {
     return (
         <div className="heading2" data-theme={props.theme || "dark"}>
             <h2>{props.children}</h2>
-            {lang === 'eng' || lang === 'ja' || lang === 'es' ? (
+            {lang === 'eng' || lang === 'ja' || lang === 'spa' ? (
                 <p ref={rubberText}>
                     <SplitText layer={2}>
                         {props.title}
