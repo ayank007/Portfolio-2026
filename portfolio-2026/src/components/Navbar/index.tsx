@@ -128,7 +128,7 @@ const Navbar = ({ data }: any) => {
         <div id="Navbar" data-scroll-sticky data-scroll-target="#Main"
             className="top-0 left-0 border-b border-solid border-light flex justify-between w-full fixed z-50">
             <div className="logo border-r border-solid border-light font-black">
-                <Link2 to="#root" className='Link cursor-pointer'>
+                <Link2 to="/" hash="Main" className='Link cursor-pointer'>
                     <MagneticElement velocity={80}>
                         <div className="nav pointer-events-none">AYAN</div>
                     </MagneticElement>
@@ -194,7 +194,7 @@ const Navbar = ({ data }: any) => {
                 </div>
 
                 <div className="border-l border-solid border-light hidden sm:block">
-                    <Link2 to="#Contact">
+                    <Link2 to="/" hash="Contact">
                         <MagneticElement velocity={80}>
                             <div className="nav Link">
                                 <div className="contactBtn pointer-events-none">

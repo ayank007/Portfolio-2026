@@ -221,3 +221,19 @@
         transform: translateY(calc(61px - 100%)) translateX(-50%);
     }
 }
+
+@media (width <=600px) {
+    html:not([lang="eng"]) {
+        #Header {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    #Header {
+        h1 {
+            font-size: 60px;
+        }
+    }
+}

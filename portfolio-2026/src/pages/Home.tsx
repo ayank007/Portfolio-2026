@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { useLang } from '../App'
 import Hero from '../components/Hero'
 import ScrollReveal from '../utils/ScrollReveal'
@@ -15,6 +15,22 @@ const Home = () => {
     const context = useLang();
     if (!context) return null;
     const { data } = context;
+
+    useEffect(() => {
+        if (!location.hash) return;
+        const timer = setTimeout(() => {
+            const targetId = location.hash.replace(/^#/, '');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                console.warn(`Section with id="${targetId}" not found on the page!`);
+            }
+        }, 500);
+
+        return () => clearTimeout(timer);
+    }, [location.hash]);
 
     return (
         <>

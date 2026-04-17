@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from "gsap"
 import { useIsomorphicLayoutEffect } from "../../useIsomorphicLayoutEffect"
 
@@ -16,11 +16,25 @@ import imgExperience from '../../assets/nav/img-career.png'
 import imgAbout from '../../assets/nav/img-about.webp'
 
 function Navpage({ data }: any) {
+
     const { navpageStatus }: any = NavpageToggler()
     const containerRef = useRef<HTMLDivElement>(null)
 
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkSize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        // Set initial value
+        checkSize();
+
+        window.addEventListener('resize', checkSize);
+        return () => window.removeEventListener('resize', checkSize);
+    }, []);
 
     useIsomorphicLayoutEffect(() => {
+        if (isMobile) return;
         // Create a GSAP Context to handle all scoped animations and cleanups
         let ctx = gsap.context(() => {
             const follower = document.querySelector('.cursor-follower');
@@ -90,35 +104,37 @@ function Navpage({ data }: any) {
 
     return (
         <section id='Navpage' ref={containerRef} className={navpageStatus ? 'active' : ''}>
-            <div className="cursor-follower">
-                <img id="img-1" className="absolute w-full h-full object-cover" src={imgHeader} alt="" />
-                <img id="img-2" className="absolute w-full h-full object-cover" src={imgExperience} alt="" />
-                <img id="img-3" className="absolute w-full h-full object-cover" src={imgAbout} alt="" />
-                <img id="img-4" className="absolute w-full h-full object-cover" src={imgProjects} alt="" />
-            </div>
+            {!isMobile && (
+                <div className="cursor-follower">
+                    <img id="img-1" loading='lazy' className="absolute w-full h-full object-cover" src={imgHeader} alt="" />
+                    <img id="img-2" loading='lazy' className="absolute w-full h-full object-cover" src={imgExperience} alt="" />
+                    <img id="img-3" loading='lazy' className="absolute w-full h-full object-cover" src={imgAbout} alt="" />
+                    <img id="img-4" loading='lazy' className="absolute w-full h-full object-cover" src={imgProjects} alt="" />
+                </div>
+            )}
             <div className="menu w-full lg:w-1/2 flex1 flex-col">
                 <ul className='work-list'>
                     <div className="hover-reveal-bg"></div>
                     <li className='work-item' data-img="img-1">
-                        <Link2 to={'Home'}>
+                        <Link2 to={'/'} hash="Main">
                             <span>01.</span>
                             <RollingText title={data.home} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-4">
-                        <Link2 to={'#Projects'}>
+                        <Link2 to={'/'} hash="Projects">
                             <span>02.</span>
                             <RollingText title={data.projects} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-2">
-                        <Link2 to={'#Experience'}>
+                        <Link2 to={'/'} hash="Experience">
                             <span>03.</span>
                             <RollingText title={data.experience} />
                         </Link2>
                     </li>
                     <li className='work-item' data-img="img-3">
-                        <Link2 to={"#AboutMe"}>
+                        <Link2 to={"/"} hash="AboutMe">
                             <span>04.</span>
                             <RollingText title={data.about} />
                         </Link2>
@@ -126,7 +142,7 @@ function Navpage({ data }: any) {
                 </ul>
                 <div className='mt-10 mb-14'>
                     <MagneticElement>
-                        <Link2 to="#Contact">
+                        <Link2 to="/" hash="Contact">
                             <div className='bg-white text-[#181818] px-10 py-3 font-semibold text-xl rounded-full'>{data.contact}</div>
                         </Link2>
                     </MagneticElement>
@@ -134,7 +150,7 @@ function Navpage({ data }: any) {
             </div>
             <div className="skills w-1/2 hidden lg:flex justify-center items-center">
                 <div className="filter"></div>
-                <Sphere />
+                {!isMobile && <Sphere />}
             </div>
         </section>
     )

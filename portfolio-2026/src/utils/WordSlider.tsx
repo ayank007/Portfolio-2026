@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
+import './WordSlider.scss';
 
 interface WordSliderProps {
     data: string;
@@ -76,7 +77,7 @@ const WordSlider: React.FC<WordSliderProps> = ({ data }) => {
 
             <span
                 ref={wrapperRef}
-                className="relative block overflow-hidden h-[1.1em]"
+                className="relative block overflow-hidden h-[1.1em] wordHeight"
             >
                 <span ref={containerRef} className="relative block w-full h-full">
                     <span className="word-node absolute inset-0 flex items-center justify-center whitespace-nowrap">

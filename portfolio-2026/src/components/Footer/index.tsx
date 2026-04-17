@@ -260,13 +260,13 @@ const Footer = ({ data }: any) => {
                     <div className="sec" ref={sec}></div>
                 </div>
                 <div className="messi">
-                    <img src={messi} alt="" />
+                    <img src={messi} alt="" loading='lazy' />
                 </div>
                 <div className="ronaldo">
-                    <img src={ronaldo} alt="" />
+                    <img src={ronaldo} alt="" loading='lazy' />
                 </div>
                 <div className='viratKohli'>
-                    <img src={virat} alt="" />
+                    <img src={virat} alt="" loading='lazy' />
                 </div>
             </div>
         </footer>

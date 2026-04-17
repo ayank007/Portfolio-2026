@@ -177,7 +177,7 @@ function App() {
               <Navpage data={data.nav} />
             </NavCtxProvider>
 
-            <main className='bg-theme'>
+            <main className='bg-theme' id='Main'>
               <FluidCursor />
               <Outlet />
             </main>

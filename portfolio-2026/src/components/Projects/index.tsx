@@ -15,6 +15,7 @@ import ProjectCard5 from './Cards/ProjectCard5';
 import ProjectCard6 from './Cards/ProjectCard6';
 import ProjectCard7 from './Cards/ProjectCard7';
 import ProjectCard8 from './Cards/ProjectCard8';
+import { Link } from '@tanstack/react-router';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -145,13 +146,17 @@ const Projects = ({ data }: any) => {
                     <div className="card z-20"
                         onMouseEnter={() => handleMouseEnter(data.project1.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard1, data.project1, "project1")}
+                        <Link to={`/resume-and-portfolio`}>
+                            {renderCard(ProjectCard1, data.project1, "project1")}
+                        </Link>
                     </div>
 
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project6.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard6, data.project6, "project6")}
+                        <Link to={`/workally`}>
+                            {renderCard(ProjectCard6, data.project6, "project6")}
+                        </Link>
                     </div>
                 </div>
 
@@ -159,12 +164,16 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project3.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard3, data.project3, "project3")}
+                        <Link to={`/fun-projects`}>
+                            {renderCard(ProjectCard3, data.project3, "project3")}
+                        </Link>
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project5.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard5, data.project5, "project5")}
+                        <Link to={`/travmaks`}>
+                            {renderCard(ProjectCard5, data.project5, "project5")}
+                        </Link>
                     </div>
                 </div>
 
@@ -172,12 +181,16 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project4.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard4, data.project4, "project4")}
+                        <Link to={`/bankbuddy`}>
+                            {renderCard(ProjectCard4, data.project4, "project4")}
+                        </Link>
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project7.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard7, data.project7, "project7")}
+                        <Link to={`/reel-bhejo`}>
+                            {renderCard(ProjectCard7, data.project7, "project7")}
+                        </Link>
                     </div>
                 </div>
 
@@ -185,12 +198,16 @@ const Projects = ({ data }: any) => {
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project2.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard2, data.project2, "project2")}
+                        <Link to={`/freelancing`}>
+                            {renderCard(ProjectCard2, data.project2, "project2")}
+                        </Link>
                     </div>
                     <div className="card"
                         onMouseEnter={() => handleMouseEnter(data.project8.title)}
                         onMouseLeave={handleMouseLeave}>
-                        {renderCard(ProjectCard8, data.project8, "project8")}
+                        <Link to={`/futnote`}>
+                            {renderCard(ProjectCard8, data.project8, "project8")}
+                        </Link>
                     </div>
                 </div>
             </div>

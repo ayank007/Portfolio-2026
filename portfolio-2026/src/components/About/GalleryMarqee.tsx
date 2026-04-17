@@ -4,6 +4,16 @@ import { useLenis } from 'lenis/react';
 import WordSlider from '../../utils/WordSlider';
 import Heading2 from '../../utils/Heading2';
 
+import img1 from "../../assets/about/img-gallery-slider-1.webp";
+import img2 from "../../assets/about/img-gallery-slider-2.webp";
+import img3 from "../../assets/about/img-gallery-slider-3.webp";
+import img4 from "../../assets/about/img-gallery-slider-6.webp";
+import img5 from "../../assets/about/img-gallery-slider-5.webp";
+import img6 from "../../assets/about/img-gallery-slider-7.webp";
+import img7 from "../../assets/about/img-gallery-slider-4.webp";
+import img8 from "../../assets/about/img-gallery-slider-8.webp";
+
+const sliderImages = [img1, img2, img3, img4, img5, img6, img7, img8];
 interface SliderConfig {
     cardCount: number;
     baseSpeed: number;
@@ -21,7 +31,7 @@ const ArcSlider = ({ data }: any) => {
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     const config = useRef<SliderConfig>({
-        cardCount: 6,
+        cardCount: sliderImages.length,
         baseSpeed: 0.02,
         scrollBoost: 0.05,
         spacing: 0,
@@ -109,15 +119,16 @@ const ArcSlider = ({ data }: any) => {
             <div
                 ref={containerRef} className='relative w-full overflow-hidden z-10'
             >
-                {Array.from({ length: config.current.cardCount }).map((_, i) => (
+                {sliderImages.map((img, i) => (
                     <div
                         key={i}
-                        ref={(el: HTMLDivElement | null) => { cardsRef.current[i] = el; }}
+                        ref={(el) => { cardsRef.current[i] = el; }}
                         className="absolute left-1/2 top-[10%] bg-stone-200 rounded-2xl border border-black/5 overflow-hidden shadow-xl will-change-transform"
                     >
                         <img
-                            src={`https://picsum.photos/400/600?random=${i + 120}`}
-                            alt=""
+                            src={img}
+                            alt={`Gallery slide ${i + 1}`}
+                            loading='lazy'
                             className="w-full h-full object-cover opacity-95 pointer-events-none"
                         />
                     </div>

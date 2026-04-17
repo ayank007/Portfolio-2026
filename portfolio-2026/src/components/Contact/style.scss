@@ -264,3 +264,13 @@ form {
 .roundedTexts svg {
     opacity: 0.8;
 }
+
+html:not([lang="eng"]) {
+    .sliding-text--second-screen .sliding-text__line {
+        height: 60px;
+    }
+
+    .sliding-text--second-screen .sliding-text__line span {
+        height: 60px;
+    }
+}

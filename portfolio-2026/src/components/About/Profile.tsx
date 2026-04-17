@@ -82,8 +82,8 @@ const Profile: React.FC = () => {
 
     const ImageStack = ({ multiplier, isOuter, id }: { multiplier: string, isOuter?: boolean, id: string }) => (
         <div className={`absolute inset-0 flex items-center justify-center overflow-hidden ${isOuter ? 'rounded-b-full' : 'rounded-full'}`}>
-            <img src={ayan1} className={`absolute w-full h-full object-cover object-top translate-y-[8%] ${isOuter ? 'rounded-b-full' : 'rounded-full'}`} style={{ width: multiplier, height: multiplier }} />
-            <img src={ayan2} className={`img-alt-${id} absolute w-full h-full object-cover object-top translate-y-[8%] opacity-0 ${isOuter ? 'rounded-b-full' : 'rounded-full'}`} style={{ width: multiplier, height: multiplier }} />
+            <img loading='lazy' src={ayan1} className={`absolute w-full h-full object-cover object-top translate-y-[8%] ${isOuter ? 'rounded-b-full' : 'rounded-full'}`} style={{ width: multiplier, height: multiplier }} />
+            <img loading='lazy' src={ayan2} className={`img-alt-${id} absolute w-full h-full object-cover object-top translate-y-[8%] opacity-0 ${isOuter ? 'rounded-b-full' : 'rounded-full'}`} style={{ width: multiplier, height: multiplier }} />
         </div>
     );
 
