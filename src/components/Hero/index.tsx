@@ -4,7 +4,7 @@ import TypeWriter from './typeWriter'
 import { Link } from '@tanstack/react-router'
 
 // images
-import Grid from '@/assets/hero/gridBg.png'
+import Grid from '@/assets/hero/gridbg.png'
 import FigmaLogo from '@/assets/hero/figma.png'
 import Polygon from '@/assets/hero/polygon.png'
 import GsapLogo from '@/assets/hero/gsapLogo.gif'
