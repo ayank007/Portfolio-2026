@@ -1,5 +1,4 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router"
-import { AnimToggler } from "../../context/pageTransition"
 import { NavpageToggler } from "../../context/openNavpage"
 
 const Link2 = ({ to, hash, children, className, onClick, ...props }: any) => {
@@ -8,40 +7,25 @@ const Link2 = ({ to, hash, children, className, onClick, ...props }: any) => {
     const toggleNavpage = navCtx.toggleNavpage || (() => { })
     const navpageStatus = navCtx.navpageStatus || false
 
-    // 2. Safely extract Anim Context (This prevents the TypeError crash!)
-    const animCtx: any = AnimToggler() || {}
-    const toggleAnimStatus = animCtx.toggleAnimStatus || (() => { })
-
     const location = useLocation()
     const navigate = useNavigate()
 
-    // --- SCENARIO A: Cross-Page Navigation (e.g., /fun-projects -> /#AboutMe) ---
     const handleCrossPageClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault()
         if (onClick) onClick(e)
 
-        // Start the page transition animation
-        toggleAnimStatus()
+        navigate({
+            to: to || "/",
+            hash: hash
+        })
 
-        // Wait 1 second for the animation to finish, THEN navigate and close the menu
-        setTimeout(() => {
-            navigate({
-                to: to || "/",
-                hash: hash
-            })
-
-            if (navpageStatus) {
-                toggleNavpage()
-            }
-        }, 1000)
+        if (navpageStatus) {
+            toggleNavpage()
+        }
     }
-
-    // --- SCENARIO B: Same-Page Navigation (e.g., / -> /#AboutMe) ---
     const handleSamePageClick = (e: any) => {
         if (onClick) onClick(e)
 
-        // If we are already on the home page, we don't need the 1-second timeout.
-        // Just close the menu immediately and let TanStack jump to the section.
         if (navpageStatus) {
             toggleNavpage()
         }

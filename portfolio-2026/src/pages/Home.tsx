@@ -1,7 +1,8 @@
-import { Suspense, lazy, useEffect } from 'react'
+import { Suspense, lazy } from 'react'
 import { useLang } from '../App'
 import Hero from '../components/Hero'
 import ScrollReveal from '../utils/ScrollReveal'
+import HashScroller from '../utils/HashScroller'
 
 // Lazy load components below the fold
 const Projects = lazy(() => import('../components/Projects'))
@@ -16,22 +17,6 @@ const Home = () => {
     if (!context) return null;
     const { data } = context;
 
-    useEffect(() => {
-        if (!location.hash) return;
-        const timer = setTimeout(() => {
-            const targetId = location.hash.replace(/^#/, '');
-            const targetElement = document.getElementById(targetId);
-
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                console.warn(`Section with id="${targetId}" not found on the page!`);
-            }
-        }, 500);
-
-        return () => clearTimeout(timer);
-    }, [location.hash]);
-
     return (
         <>
             <Hero data={data.hero} />
@@ -44,6 +29,7 @@ const Home = () => {
                 <About data={data.about} />
                 <Contact data={data.contact} />
                 <Footer data={data.footer} />
+                <HashScroller />
             </Suspense>
         </>
     )
