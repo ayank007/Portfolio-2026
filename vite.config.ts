@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
-    base: '/Portfolio-2026/',
+    base: process.env.VITE_BASE_PATH || '/',
     resolve: {
       alias: { "@": path.resolve(__dirname, "./src") },
     },
