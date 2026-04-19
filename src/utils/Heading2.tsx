@@ -1,4 +1,4 @@
-import './heading2.scss'
+import './Heading2.scss'
 import { useRef } from 'react'
 import SplitText from './SplitText'
 import { useIsomorphicLayoutEffect } from '../useIsomorphicLayoutEffect'
