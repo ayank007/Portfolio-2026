@@ -6,7 +6,7 @@ import { Link } from '@tanstack/react-router'
 // images
 import Grid from '@/assets/hero/gridbg.png'
 import FigmaLogo from '@/assets/hero/figma.png'
-import Polygon from '@/assets/hero/polygon.png'
+import Polygon from '@/assets/hero/Polygon.png'
 import GsapLogo from '@/assets/hero/gsapLogo.gif'
 import JavaScriptLogo from '@/assets/hero/javascript.png'
 import Plant from '@/assets/hero/plant.svg'
