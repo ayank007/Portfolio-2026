@@ -1,6 +1,6 @@
 
 import project4 from '../../../assets/projects/project4.webp'
-import front from '../../../assets/projects/front1.webp'
+import front from '../../../assets/projects/Front1.webp'
 import BoxCanvas from "./boxCanvas"
 
 const ProjectCard2 = ({ data }: any) => {
